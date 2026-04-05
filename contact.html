@@ -1,18 +1,11 @@
-<section class="contact-section">
+<section class="contact">
 
   <h2><a href="contact.html">Contact</a></h2>
 
-  <!-- BACKGROUND -->
-  <div class="bg-animation">
-    <span></span><span></span><span></span><span></span><span></span>
-  </div>
+  <div class="contact-box">
 
-  <!-- WRAPPER -->
-  <div class="contact-wrapper">
-
-    <!-- INFO CARD -->
-    <div class="contact-card">
-
+    <!-- LEFT SIDE -->
+    <div class="contact-info">
       <p><strong>📞 Phone:</strong> 09158689138</p>
       <p><strong>📧 Email:</strong> akeem.fatai15@gmail.com</p>
 
@@ -21,14 +14,10 @@
         <a href="https://instagram.com/YOUR_USERNAME" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://facebook.com/YOUR_USERNAME" target="_blank"><i class="fab fa-facebook"></i></a>
       </div>
-
     </div>
 
-    <!-- FORM CARD -->
-    <div class="contact-card">
-
-      <h3>Send Me a Message</h3>
-
+    <!-- RIGHT SIDE -->
+    <div class="contact-form">
       <form action="https://formspree.io/f/maqlpaqk" method="POST">
 
         <input type="text" name="name" placeholder="Your Name" required>
@@ -40,75 +29,52 @@
         <button type="submit">Send Message</button>
 
       </form>
-
     </div>
 
   </div>
 
 </section>
 
-<!-- ICONS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
 /* SECTION */
-.contact-section {
-  position: relative;
+.contact {
   padding: 40px 20px;
-  overflow: hidden;
 }
 
-.contact-section h2 a {
+.contact h2 a {
   color: white;
   text-decoration: none;
 }
 
-/* FLEX LAYOUT (KEY FIX) */
-.contact-wrapper {
+/* MAIN BOX (FIXES EVERYTHING) */
+.contact-box {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  position: relative;
-  z-index: 2;
   max-width: 1000px;
   margin: auto;
 }
 
 /* CARDS */
-.contact-card {
+.contact-info,
+.contact-form {
   background: #1e293b;
   padding: 20px;
   border-radius: 15px;
 }
 
-/* FORM */
-.contact-card input,
-.contact-card textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: none;
-}
-
-.contact-card button {
-  padding: 12px 25px;
-  background: #d4af37;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-}
-
-/* SOCIAL ICONS */
+/* SOCIALS */
 .socials {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   margin-top: 15px;
 }
 
 .socials a {
-  font-size: 28px;
+  font-size: 24px;
   color: white;
   transition: 0.3s;
 }
@@ -121,44 +87,34 @@
 .socials a:nth-child(2):hover { color:#E4405F; }
 .socials a:nth-child(3):hover { color:#1877F2; }
 
-/* 🔥 BACKGROUND ANIMATION */
-.bg-animation {
-  position: absolute;
+/* FORM */
+.contact-form input,
+.contact-form textarea {
   width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
 }
 
-.bg-animation span {
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 50%;
-  animation: float 12s linear infinite;
+.contact-form button {
+  padding: 12px 25px;
+  background: #d4af37;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
 }
 
-.bg-animation span:nth-child(1){ left:10%; animation-duration:10s;}
-.bg-animation span:nth-child(2){ left:30%; animation-duration:14s;}
-.bg-animation span:nth-child(3){ left:50%; animation-duration:8s;}
-.bg-animation span:nth-child(4){ left:70%; animation-duration:16s;}
-.bg-animation span:nth-child(5){ left:90%; animation-duration:12s;}
-
-@keyframes float {
-  0% { transform: translateY(100vh); }
-  100% { transform: translateY(-10vh); }
-}
-
-/* 🔥 RESPONSIVE (IMPORTANT FIX) */
-@media(min-width:768px){
-  .contact-wrapper {
+/* 🔥 RESPONSIVE FIX */
+@media (min-width: 768px) {
+  .contact-box {
     flex-direction: row;
   }
 
-  .contact-card {
+  .contact-info,
+  .contact-form {
     flex: 1;
   }
 }
 
-  </style>
+</style>
