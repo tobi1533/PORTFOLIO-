@@ -3,65 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oluwatobi Fatai | Cybersecurity Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Akeem Fatai Oluwatobi </title>
 
 <style>
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    background: #0f172a;
-    color: #f1f5f9;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
 }
 
 header {
-    background: #020617;
-    padding: 20px;
-    text-align: center;
+  text-align: center;
+  padding: 60px 20px;
 }
 
-header h1 {
-    margin: 0;
-    color: #38bdf8;
+h1 {
+  font-size: 40px;
 }
 
-nav {
-    margin-top: 10px;
+p {
+  color: #cbd5f5;
 }
 
-nav a {
-    margin: 0 10px;
-    color: #94a3b8;
-    text-decoration: none;
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  padding: 12px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.whatsapp {
+  background: #25D366;
+  color: white;
+}
+
+.cv {
+  background: #334155;
+  color: white;
 }
 
 section {
-    padding: 40px 20px;
-    max-width: 900px;
-    margin: auto;
+  padding: 40px 20px;
 }
 
-h2 {
-    color: #38bdf8;
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
 .card {
-    background: #1e293b;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 10px;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 15px;
 }
 
-ul {
-    padding-left: 20px;
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card button {
+  width: 100%;
+  margin-top: 10px;
+  background: #3b82f6;
+  color: white;
+}
+
+.skills span {
+  background: #1e293b;
+  padding: 10px;
+  margin: 5px;
+  display: inline-block;
+  border-radius: 10px;
 }
 
 footer {
-    text-align: center;
-    padding: 20px;
-    background: #020617;
-    color: #94a3b8;
+  text-align: center;
+  padding: 20px;
+  color: gray;
+}
+
+@media(min-width:768px){
+  .projects {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 </style>
 </head>
@@ -69,117 +102,94 @@ footer {
 <body>
 
 <header>
-    <h1>Oluwatobi Fatai</h1>
-    <p>Security Supervisor | Aspiring SOC Analyst</p>
+  <h1>AKEEM FATAI OLIWATOBI</h1>
+  <p>Web Developer • Designer • Creator</p>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-    </nav>
+  <div class="buttons">
+    <a href="https://wa.me/2349158689138" target="_blank">
+      <button class="whatsapp">Chat on WhatsApp</button>
+    </a>
+
+    <a href="oluwatobi cvcvcvc c.pdf" download>
+      <button class="cv">Download CV</button>
+    </a>
+  </div>
 </header>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>
-        I am a Security and Safety professional transitioning into Cybersecurity.
-        I have hands-on experience in surveillance, incident response, and access control,
-        and I am building expertise in SOC operations, threat detection, and log analysis.
-    </p>
+<section>
+  <h2>About Me</h2>
+  <p>
+    I am a passionate web developer who builds modern websites for businesses
+    including farms, hotels, and startups.
+  </p>
 </section>
 
-<section id="projects">
-    <h2>Cybersecurity Projects</h2>
+<section>
+  <h2>My Projects</h2>
 
+  <div class="projects">
+
+    <!-- FARM PROJECT -->
     <div class="card">
-        <h3>SSH Brute Force Attack Investigation</h3>
-        <p>
-            Analyzed system logs to detect repeated failed login attempts.
-            Identified attack patterns and classified activity as brute force.
-        </p>
-        <ul>
-            <li>Log analysis and pattern detection</li>
-            <li>Identified malicious IP behavior</li>
-            <li>Recommended mitigation (IP blocking, account lockout)</li>
-        </ul>
+      <img src="tobi__fatai_b0f9892d9aff4bcbbfe1d6c81aeab03b.jpg" alt="Farm Project">
+      <h3>Poultry Farm Website</h3>
+      <p>Modern farm website with ordering and contact features.</p>
+
+      <a href="https://your-farm-link.com" target="_blank">
+        <button>View Live Site</button>
+      </a>
     </div>
 
+    <!-- HOTEL PROJECT -->
     <div class="card">
-        <h3>Phishing Email Analysis</h3>
-        <p>
-            Investigated suspicious email headers and identified spoofing techniques.
-        </p>
-        <ul>
-            <li>Analyzed email headers</li>
-            <li>Detected malicious links</li>
-            <li>Identified social engineering tactics</li>
-        </ul>
+      <img src="tobi__fatai_b0f9892d9aff4bcbbfe1d6c81aeab03b.jpg" alt="Hotel Project">
+      <h3>Hotel Website</h3>
+      <p>Elegant hotel website with booking-style design.</p>
+
+      <a href="https://tobi1533.github.io/shangrila-view-hotel/" target="_blank">
+        <button>View Live Site</button>
+      </a>
     </div>
 
-    <div class="card">
-        <h3>Malware Alert Investigation</h3>
-        <p>
-            Investigated suspicious file alerts using threat intelligence tools.
-        </p>
-        <ul>
-            <li>File hash analysis</li>
-            <li>Used VirusTotal for validation</li>
-            <li>Documented findings and response actions</li>
-        </ul>
-    </div>
-
+  </div>
 </section>
 
-<section id="skills">
-    <h2>Skills</h2>
-    <ul>
-        <li>Security Operations</li>
-        <li>CCTV Monitoring</li>
-        <li>Incident Response</li>
-        <li>Threat Detection</li>
-        <li>Log Analysis</li>
-        <li>Wireshark (Basic)</li>
-        <li>Splunk (Basic)</li>
-        <li>Access Control</li>
-    </ul>
+<section>
+  <h2>Skills</h2>
+  <div class="skills">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>UI/UX</span>
+  </div>
 </section>
 
-<section id="experience">
-    <h2>Experience</h2>
+<section>
+   <h3>Contact</h3>
+  <p>PHONE:- 09158689138</p>
+   <p>MAIL:- Akeem.fatai15@gmail.com</p>
+  <p>Reach out to me instantly.</p>
 
-    <div class="card">
-        <h3>Internal Security Supervisor - Tastee Fried Chicken</h3>
-        <p>Supervising security operations, monitoring CCTV, and handling incidents.</p>
-    </div>
+   <!-- ✅ ADD THIS FORM -->
+  <form action="https://formspree.io/f/maqlpaqk" method="POST" style="margin-top:30px;">
 
-    <div class="card">
-        <h3>Group Security Supervisor - G4S</h3>
-        <p>Managed multiple security teams and ensured compliance.</p>
-    </div>
+    <input type="text" name="name" placeholder="Your Name/ Company Name " required 
+    style="width:100%; padding:12px; margin:10px 0; border-radius:8px; border:none;">
 
-    <div class="card">
-        <h3>Security Officer - Izedon Industries</h3>
-        <p>Access control, patrol monitoring, and incident reporting.</p>
-    </div>
+    <textarea name="message" placeholder="Your Message" rows="5" required 
+    style="width:100%; padding:12px; margin:10px 0; border-radius:8px; border:none;"></textarea>
 
-</section>
+    <button type="submit" 
+    style="padding:12px 25px; background:#d4af37; border:none; border-radius:25px; cursor:pointer;">
+      Send Message
+    </button>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Email: akeem.fatai15@gmail.com</p>
-    <p>Phone: 09158689138</p>
-    <p>
-        <a href="https://www.linkedin.com/in/oluwatobi-akeem-4b16462b1" style="color:#38bdf8;">
-            LinkedIn Profile
-        </a>
-    </p>
+  </form>
 </section>
 
 <footer>
-    <p>© 2026 Oluwatobi Fatai | Cybersecurity Portfolio</p>
+  © 2026 Your Name. All rights reserved.
 </footer>
 
 </body>
-  </html>
+          </html>
