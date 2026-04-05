@@ -1,95 +1,81 @@
-<section class="contact">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Akeem Fatai Oluwatobi</title>
 
-  <h2><a href="contact.html">Contact</a></h2>
-
-  <div class="contact-box">
-
-    <!-- LEFT SIDE -->
-    <div class="contact-info">
-      <p><strong>📞 Phone:</strong> 09158689138</p>
-      <p><strong>📧 Email:</strong> akeem.fatai15@gmail.com</p>
-
-      <div class="socials">
-        <a href="https://wa.me/2349158689138" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://instagram.com/YOUR_USERNAME" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://facebook.com/YOUR_USERNAME" target="_blank"><i class="fab fa-facebook"></i></a>
-      </div>
-    </div>
-
-    <!-- RIGHT SIDE -->
-    <div class="contact-form">
-      <form action="https://formspree.io/f/maqlpaqk" method="POST">
-
-        <input type="text" name="name" placeholder="Your Name" required>
-
-        <input type="email" name="email" placeholder="Your Email" required>
-
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-
-        <button type="submit">Send Message</button>
-
-      </form>
-    </div>
-
-  </div>
-
-</section>
-
+<!-- ICONS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-
-/* SECTION */
-.contact {
-  padding: 40px 20px;
-}
-
-.contact h2 a {
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
   color: white;
-  text-decoration: none;
 }
 
-/* MAIN BOX (FIXES EVERYTHING) */
-.contact-box {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 1000px;
+header {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+p {
+  color: #cbd5f5;
+}
+
+.container {
+  max-width: 900px;
   margin: auto;
+  padding: 20px;
 }
 
-/* CARDS */
-.contact-info,
-.contact-form {
+/* CONTACT CARDS */
+.contact-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.contact-card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: 0.3s;
+}
+
+.contact-card i {
+  font-size: 22px;
+  padding: 12px;
+  border-radius: 50%;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+/* COLORS */
+.phone i { background:#22c55e; }
+.email i { background:#3b82f6; }
+.whatsapp i { background:#25D366; }
+.linkedin i { background:#0A66C2; }
+
+/* FORM */
+form {
+  margin-top: 30px;
   background: #1e293b;
   padding: 20px;
   border-radius: 15px;
 }
 
-/* SOCIALS */
-.socials {
-  display: flex;
-  gap: 15px;
-  margin-top: 15px;
-}
-
-.socials a {
-  font-size: 24px;
-  color: white;
-  transition: 0.3s;
-}
-
-.socials a:hover {
-  transform: scale(1.2);
-}
-
-.socials a:nth-child(1):hover { color:#25D366; }
-.socials a:nth-child(2):hover { color:#E4405F; }
-.socials a:nth-child(3):hover { color:#1877F2; }
-
-/* FORM */
-.contact-form input,
-.contact-form textarea {
+input, textarea {
   width: 100%;
   padding: 12px;
   margin: 10px 0;
@@ -97,24 +83,136 @@
   border: none;
 }
 
-.contact-form button {
+button {
   padding: 12px 25px;
   background: #d4af37;
   border: none;
   border-radius: 25px;
   cursor: pointer;
+  font-weight: bold;
 }
 
-/* 🔥 RESPONSIVE FIX */
-@media (min-width: 768px) {
-  .contact-box {
-    flex-direction: row;
-  }
-
-  .contact-info,
-  .contact-form {
-    flex: 1;
-  }
+button:hover {
+  opacity: 0.8;
 }
 
+/* SOCIAL */
+.socials {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.socials a {
+  margin: 10px;
+  font-size: 22px;
+  color: white;
+  background: #1e293b;
+  padding: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  transform: scale(1.2);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: gray;
+  margin-top: 40px;
+}
 </style>
+</head>
+
+<body>
+
+<header>
+<h1>Contact Me</h1>
+<p>Let’s work together or discuss your project</p>
+</header>
+
+<div class="container">
+
+<!-- CONTACT INFO -->
+<div class="contact-grid">
+
+  <a href="tel:09158689138" class="contact-card phone">
+    <i class="fas fa-phone"></i>
+    <div>
+      <h3>Phone</h3>
+      <p>09158689138</p>
+    </div>
+  </a>
+
+  <a href="mailto:Akeem.fatai15@gmail.com" class="contact-card email">
+    <i class="fas fa-envelope"></i>
+    <div>
+      <h3>Email</h3>
+      <p>Akeem.fatai15@gmail.com</p>
+    </div>
+  </a>
+
+  <a href="https://wa.me/2349158689138" target="_blank" class="contact-card whatsapp">
+    <i class="fab fa-whatsapp"></i>
+    <div>
+      <h3>WhatsApp</h3>
+      <p>Chat instantly</p>
+    </div>
+  </a>
+
+  <a href="https://www.linkedin.com/in/oluwatobi-akeem-4b16462b1" target="_blank" class="contact-card linkedin">
+    <i class="fab fa-linkedin"></i>
+    <div>
+      <h3>LinkedIn</h3>
+      <p>View my professional profile</p>
+    </div>
+  </a>
+
+</div>
+
+<!-- CONTACT FORM -->
+<form action="https://formspree.io/f/maqlpaqk" method="POST">
+
+<h2>Send Me a Message</h2>
+
+<input type="text" name="name" placeholder="Your Name / Company" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+<!-- SOCIAL LINKS -->
+<div class="socials">
+
+<a href="https://wa.me/2349158689138" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<a href="https://www.instagram.com/tobi__fatai" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://www.facebook.com/share/1BMtpWTc89/" target="_blank">
+<i class="fab fa-facebook"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/oluwatobi-akeem-4b16462b1" target="_blank">
+<i class="fab fa-linkedin"></i>
+</a>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Akeem Fatai Oluwatobi
+</footer>
+
+</body>
+</html>
