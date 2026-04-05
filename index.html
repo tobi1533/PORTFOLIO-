@@ -3,159 +3,114 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akeem Fatai Oluwatobi</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<title>Akeem Fatai Oluwatobi </title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
 }
 
-body{
-  background:#0f172a;
-  color:white;
+header {
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
 }
 
-/* HEADER */
-header{
-  text-align:center;
-  padding:80px 20px;
-  position:relative;
+h1 {
+  font-size: 40px;
 }
 
-h1{
-  font-size:34px;
+p {
+  color: #cbd5f5;
 }
 
-p{
-  color:#cbd5f5;
+.buttons {
+  margin-top: 20px;
 }
 
-/* PROFILE IMAGE */
-.profile-pic{
-  position:absolute;
-  top:20px;
-  right:20px;
-  width:90px;
-  height:90px;
-  border-radius:50%;
-  object-fit:cover;
-  border:3px solid #3b82f6;
+button {
+  padding: 12px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-/* BUTTONS */
-.buttons{
-  margin-top:20px;
+.whatsapp {
+  background: #25D366;
+  color: white;
 }
 
-button{
-  padding:12px 20px;
-  margin:5px;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-  font-weight:bold;
-  transition:0.3s;
+.cv {
+  background: #334155;
+  color: white;
 }
 
-button:hover{
-  transform:scale(1.05);
+.article-btn {
+  background: #3b82f6;
+  color: white;
 }
 
-.whatsapp{
-  background:#25D366;
-  color:white;
+section {
+  padding: 40px 20px;
 }
 
-.cv{
-  background:#334155;
-  color:white;
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
-.article-btn{
-  background:#3b82f6;
-  color:white;
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 15px;
 }
 
-/* SECTION */
-section{
-  padding:50px 20px;
-  max-width:1000px;
-  margin:auto;
+.card img {
+  width: 100%;
+  border-radius: 10px;
 }
 
-/* PROJECTS */
-.projects{
-  display:grid;
-  gap:20px;
+.card button {
+  width: 100%;
+  margin-top: 10px;
+  background: #3b82f6;
+  color: white;
 }
 
-.card{
-  background:#1e293b;
-  padding:20px;
-  border-radius:15px;
-  transition:0.3s;
+.skills-container span {
+  background: #1e293b;
+  padding: 10px;
+  margin: 5px;
+  display: inline-block;
+  border-radius: 10px;
 }
 
-.card:hover{
-  transform:translateY(-5px);
+footer {
+  text-align: center;
+  padding: 20px;
+  color: gray;
 }
 
-.card img{
-  width:100%;
-  border-radius:10px;
+.profile-pic {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3b82f6;
 }
 
-.card button{
-  width:100%;
-  margin-top:10px;
-  background:#3b82f6;
-  color:white;
-}
-
-/* SKILLS */
-.skills-container{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
-.skills-container span{
-  background:#1e293b;
-  padding:10px 15px;
-  border-radius:20px;
-  font-size:14px;
-}
-
-/* FORM */
-form input, form textarea{
-  width:100%;
-  padding:12px;
-  margin:10px 0;
-  border-radius:8px;
-  border:none;
-}
-
-form button{
-  background:#d4af37;
-  border-radius:25px;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:20px;
-  color:gray;
-}
-
-/* RESPONSIVE */
 @media(min-width:768px){
-  .projects{
-    grid-template-columns:1fr 1fr;
+  .projects {
+    grid-template-columns: 1fr 1fr;
   }
 }
 </style>
@@ -165,12 +120,18 @@ footer{
 
 <header>
 
-<img src="tobi__fatai_b0f9892d9aff4bcbbfe1d6c81aeab03b.jpg" class="profile-pic">
+<img src="tobi__fatai_b0f9892d9aff4bcbbfe1d6c81aeab03b.jpg" alt="Profile Photo" class="profile-pic">
 
 <h1>AKEEM FATAI OLUWATOBI</h1>
-<p>Web Developer • Designer • Cybersecurity Enthusiast</p>
+<p>Web Developer • Designer • Creator</p>
 
 <div class="buttons">
+
+<a href="about.html"><button>About</button></a>
+<a href="projects.html"><button>Projects</button></a>
+<a href="skills.html"><button>Skills</button></a>
+<a href="article.html"><button class="article-btn">Articles</button></a>
+<a href="contact.html"><button>Contact</button></a>
 
 <a href="https://wa.me/2349158689138" target="_blank">
 <button class="whatsapp">WhatsApp</button>
@@ -180,33 +141,27 @@ footer{
 <button class="cv">Download CV</button>
 </a>
 
-<a href="article.html">
-<button class="article-btn">Articles</button>
-</a>
-
 </div>
 </header>
 
-<!-- ABOUT -->
 <section>
-<h2>About Me</h2>
+<h2><a href="about.html" style="color:white;text-decoration:none;">About Me</a></h2>
 <p>
-I am a dedicated and versatile professional with experience in web development, security operations, and industrial work. I began my career as a forklift operator and security personnel, where I developed discipline, safety awareness, and attention to detail.
+I am a dedicated and versatile professional with experience in web development, security operations, and industrial work. I began my career as a forklift operator and security personnel, where I developed discipline, safety awareness, attention to detail, and the ability to perform under pressure.
 
-Driven by a passion for technology, I transitioned into web development where I create modern, responsive, and user-friendly websites for farms, hotels, and startups.
+Driven by a passion for technology, I transitioned into web development and design, where I create modern, responsive, and user-friendly websites for farms, hotels, and startups.
 
-I focus on building visually appealing and functional platforms that help businesses grow their online presence, while also applying cybersecurity awareness to protect systems and users.
+I focus on building visually appealing and functional platforms that help businesses grow their online presence.
 </p>
 </section>
 
-<!-- PROJECTS -->
 <section>
-<h2>My Projects</h2>
+<h2><a href="projects.html" style="color:white;text-decoration:none;">My Projects</a></h2>
 
 <div class="projects">
 
 <div class="card">
-<img src="logo.jpg">
+<img src="logo.jpg" alt="Farm Project">
 <h3>Poultry Farm Website</h3>
 <p>Modern farm website with ordering and contact features.</p>
 <a href="https://tobi1533.github.io/Defamily-farm/" target="_blank">
@@ -215,7 +170,7 @@ I focus on building visually appealing and functional platforms that help busine
 </div>
 
 <div class="card">
-<img src="Screenshot_20260405-101731~2.png">
+<img src="Screenshot_20260405-101731~2.png" alt="Hotel Project">
 <h3>Hotel Website</h3>
 <p>Elegant hotel website with booking-style design.</p>
 <a href="https://tobi1533.github.io/shangrila-view-hotel/" target="_blank">
@@ -226,53 +181,52 @@ I focus on building visually appealing and functional platforms that help busine
 </div>
 </section>
 
-<!-- SKILLS -->
 <section>
-<h2>Skills</h2>
+<h2><a href="skills.html" style="color:white;text-decoration:none;">Skills</a></h2>
 
 <div class="skills-container">
 <span>HTML5</span>
 <span>CSS3</span>
 <span>JavaScript</span>
 <span>Responsive Design</span>
-<span>UI/UX</span>
+<span>UI/UX Design</span>
 <span>Git & GitHub</span>
+<span>Website Deployment</span>
 <span>SEO Basics</span>
 <span>Cybersecurity Fundamentals</span>
 <span>Network Security</span>
-<span>Web Security</span>
-<span>OWASP</span>
-<span>Ethical Hacking</span>
-<span>Linux</span>
-<span>Wireshark</span>
-<span>Nmap</span>
+<span>Web Application Security</span>
+<span>OWASP Top 10</span>
+<span>Ethical Hacking Basics</span>
+<span>Linux (Basic)</span>
+<span>Wireshark (Basic)</span>
+<span>Nmap (Basic)</span>
 </div>
 </section>
 
-<!-- ARTICLES -->
 <section>
-<h2>Articles</h2>
-<p>Read my latest cybersecurity and web development insights.</p>
-
-<a href="article.html">
-<button class="article-btn">Go to Articles</button>
-</a>
+<h2><a href="article.html" style="color:white;text-decoration:none;">Articles</a></h2>
+<p>Click to read my cybersecurity and web development articles.</p>
 </section>
 
-<!-- CONTACT -->
 <section>
-<h2>Contact</h2>
+<h2><a href="contact.html" style="color:white;text-decoration:none;">Contact</a></h2>
 
-<p>📞 09158689138</p>
-<p>📧 akeem.fatai15@gmail.com</p>
+<p>PHONE:- 09158689138</p>
+<p>MAIL:- Akeem.fatai15@gmail.com</p>
 
 <form action="https://formspree.io/f/maqlpaqk" method="POST">
 
-<input type="text" name="name" placeholder="Your Name / Company" required>
+<input type="text" name="name" placeholder="Your Name/ Company Name" required 
+style="width:100%; padding:12px; margin:10px 0; border-radius:8px; border:none;">
 
-<textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+<textarea name="message" placeholder="Your Message" rows="5" required 
+style="width:100%; padding:12px; margin:10px 0; border-radius:8px; border:none;"></textarea>
 
-<button type="submit">Send Message</button>
+<button type="submit" 
+style="padding:12px 25px; background:#d4af37; border:none; border-radius:25px; cursor:pointer;">
+Send Message
+</button>
 
 </form>
 </section>
@@ -282,4 +236,4 @@ I focus on building visually appealing and functional platforms that help busine
 </footer>
 
 </body>
-  </html>
+</html>
