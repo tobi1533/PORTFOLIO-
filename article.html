@@ -3,97 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Articles | Akeem Fatai</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<title>Articles - Akeem Fatai Oluwatobi</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
 }
 
-body{
-  background:#020617;
-  color:#fff;
+header {
+  text-align: center;
+  padding: 60px 20px;
 }
 
-/* HEADER */
-header{
-  text-align:center;
-  padding:50px 20px;
+h1 {
+  font-size: 2.5rem;
 }
 
-header h1{
-  font-size:30px;
+.subtitle {
+  color: #38bdf8;
+  margin-top: 10px;
 }
 
-/* SECTION */
-.section{
-  max-width:900px;
-  margin:auto;
-  padding:40px 20px;
+.container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
-/* ARTICLE CARD */
-.article{
-  background:#1e293b;
-  padding:20px;
-  border-radius:15px;
-  margin-bottom:20px;
+.article {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 20px;
 }
 
-.article h2{
-  margin-bottom:10px;
+.date {
+  color: #38bdf8;
+  font-size: 0.9rem;
 }
 
-.article p{
-  color:#cbd5f5;
-  line-height:1.6;
+.article h3 {
+  margin: 10px 0;
 }
 
-/* BUTTON */
-.btn{
-  display:inline-block;
-  margin-top:15px;
-  padding:10px 18px;
-  background:#3b82f6;
-  border-radius:10px;
-  text-decoration:none;
-  color:white;
+.article p {
+  color: #cbd5f5;
 }
 
-/* FAQ */
-.faq{
-  margin-top:30px;
+.article a {
+  color: #22c55e;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.faq-item{
-  background:#1e293b;
-  margin-bottom:10px;
-  padding:15px;
-  border-radius:10px;
+.article a:hover {
+  text-decoration: underline;
 }
 
-.faq-item h4{
-  margin-bottom:5px;
+footer {
+  text-align: center;
+  padding: 30px 10px;
+  border-top: 1px solid #1e293b;
+  margin-top: 40px;
 }
 
-/* BACK */
-.back{
-  text-align:center;
-  margin-top:40px;
-}
-
-/* CONTACT CTA */
-.contact-box{
-  background:#0f172a;
-  padding:20px;
-  border-radius:15px;
-  text-align:center;
-  margin-top:40px;
+footer a {
+  color: #38bdf8;
+  text-decoration: none;
+  margin: 0 10px;
 }
 </style>
 </head>
@@ -101,100 +80,114 @@ header h1{
 <body>
 
 <header>
-<h1>My Articles</h1>
-<p>Cybersecurity & Web Development Insights</p>
+  <h1>Articles</h1>
+  <p class="subtitle">Secure Code. Smart Design. Strong Systems.</p>
 </header>
 
-<div class="section">
+<div class="container">
 
-<!-- ARTICLE 1 -->
-<div class="article">
-<h2>Introduction to Cybersecurity</h2>
-<p>
-Cybersecurity is the practice of protecting systems, networks, and data from digital attacks. 
-These attacks are usually aimed at accessing, changing, or destroying sensitive information.
+  <div class="article">
+    <div class="date">Jan 5, 2024</div>
+    <h3>Designing Secure User Interfaces</h3>
+    <p>How UI/UX decisions can prevent user errors and reduce security risks.</p>
+    <a href="thearticle1.html">Read More →</a>
+  </div>
 
-As technology grows, so does cybercrime. Understanding basic security practices like strong passwords,
-secure networks, and safe browsing habits is essential for individuals and businesses.
+  <div class="article">
+    <div class="date">Jan 10, 2024</div>
+    <h3>Common Web Vulnerabilities Explained</h3>
+    <p>Understanding XSS, CSRF, and SQL Injection in modern web apps.</p>
+    <a href="thearticle2.html">Read More →</a>
+  </div>
 
-For beginners, learning about firewalls, encryption, and ethical hacking is a great starting point.
-</p>
+  <div class="article">
+    <div class="date">Jan 15, 2024</div>
+    <h3>Secure Authentication Systems</h3>
+    <p>Best practices for login systems, passwords, and multi-factor authentication.</p>
+    <a href="thearticle3.html">Read More →</a>
+  </div>
 
-<a href="#contact" class="btn">Contact Me for Security Help</a>
-</div>
+  <div class="article">
+    <div class="date">Jan 20, 2024</div>
+    <h3>Building Security-First Websites</h3>
+    <p>How to integrate security from the start of your web development process.</p>
+    <a href="thearticle4.html">Read More →</a>
+  </div>
 
-<!-- ARTICLE 2 -->
-<div class="article">
-<h2>How to Secure Your Website</h2>
-<p>
-Website security is crucial for protecting user data and maintaining trust. 
-Simple steps like using HTTPS, validating user inputs, and updating software regularly
-can prevent most attacks.
+  <div class="article">
+    <div class="date">Jan 25, 2024</div>
+    <h3>Frontend Security Best Practices</h3>
+    <p>Protecting user data on the client side with secure coding techniques.</p>
+    <a href="thearticle5.html">Read More →</a>
+  </div>
 
-Developers should also be aware of the OWASP Top 10 vulnerabilities such as SQL injection
-and cross-site scripting (XSS).
+  <div class="article">
+    <div class="date">Jan 30, 2024</div>
+    <h3>Backend Security Essentials</h3>
+    <p>Server-side protection strategies every developer should know.</p>
+    <a href="thearticle6.html">Read More →</a>
+  </div>
 
-Using secure authentication systems and regular backups can save your website from major damage.
-</p>
+  <div class="article">
+    <div class="date">Feb 4, 2024</div>
+    <h3>HTTPS and Data Encryption</h3>
+    <p>Why SSL certificates and encryption are critical for every website.</p>
+    <a href="thearticle7.html">Read More →</a>
+  </div>
 
-<a href="#contact" class="btn">Get Your Website Secured</a>
-</div>
+  <div class="article">
+    <div class="date">Feb 9, 2024</div>
+    <h3>Preventing Website Attacks</h3>
+    <p>Simple techniques to defend against common cyber threats.</p>
+    <a href="thearticle8.html">Read More →</a>
+  </div>
 
-<!-- ARTICLE 3 -->
-<div class="article">
-<h2>Beginner Guide to Ethical Hacking</h2>
-<p>
-Ethical hacking involves testing systems to find vulnerabilities before malicious hackers do.
-It is a legal and professional way to improve security.
+  <div class="article">
+    <div class="date">Feb 14, 2024</div>
+    <h3>Secure API Development</h3>
+    <p>How to design and protect APIs used in modern web applications.</p>
+    <a href="thearticle9.html">Read More →</a>
+  </div>
 
-Tools like Nmap, Wireshark, and Burp Suite are commonly used in penetration testing.
+  <div class="article">
+    <div class="date">Feb 18, 2024</div>
+    <h3>Cybersecurity for E-commerce Websites</h3>
+    <p>Protecting payments, user data, and transactions online.</p>
+    <a href="thearticle10.html">Read More →</a>
+  </div>
 
-Learning ethical hacking requires patience, practice, and strong knowledge of networking and systems.
-</p>
+  <div class="article">
+    <div class="date">Feb 22, 2024</div>
+    <h3>Website Security Testing Tools</h3>
+    <p>Tools developers can use to find and fix vulnerabilities.</p>
+    <a href="thearticle11.html">Read More →</a>
+  </div>
 
-<a href="#contact" class="btn">Start Your Security Journey</a>
-</div>
-
-<!-- CONTACT CTA -->
-<div id="contact" class="contact-box">
-<h2>Need Help or Want to Work With Me?</h2>
-<p>Send me a message directly and I’ll respond as soon as possible.</p>
-
-<a href="index.html#contact" class="btn">Send Message</a>
-</div>
-
-<!-- FAQ -->
-<div class="faq">
-<h2>Frequently Asked Questions</h2>
-
-<div class="faq-item">
-<h4>Do you build websites for businesses?</h4>
-<p>Yes, I design and develop modern websites for farms, hotels, and startups.</p>
-</div>
-
-<div class="faq-item">
-<h4>Can you secure my existing website?</h4>
-<p>Yes, I can analyze your website and apply security improvements.</p>
-</div>
-
-<div class="faq-item">
-<h4>Do you offer cybersecurity services?</h4>
-<p>I provide beginner to intermediate level security solutions and guidance.</p>
-</div>
-
-<div class="faq-item">
-<h4>How can I contact you quickly?</h4>
-<p>You can use the contact form on the homepage or WhatsApp button.</p>
-</div>
-
-</div>
-
-<!-- BACK -->
-<div class="back">
-<a href="index.html" class="btn">⬅ Back to Home</a>
-</div>
+  <div class="article">
+    <div class="date">Feb 28, 2024</div>
+    <h3>Future of Secure Web Development</h3>
+    <p>Trends shaping the future of cybersecurity in web design.</p>
+    <a href="thearticle12.html">Read More →</a>
+  </div>
 
 </div>
+
+<footer>
+  <p>LET'S CONNECT</p>
+  <p>Contact</p>
+  <p>We collaborate with ambitious brands and people worldwide.</p>
+  <p>akeem.fatai15@gmail.com</p>
+  <p>+(234)9158689138</p>
+
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="articles.html">Articles</a>
+  </div>
+
+  <p>Design by RDG</p>
+</footer>
 
 </body>
   </html>
