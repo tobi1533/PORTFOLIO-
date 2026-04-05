@@ -16,6 +16,7 @@ body {
 header {
   text-align: center;
   padding: 60px 20px;
+  position: relative; /* needed for image positioning */
 }
 
 h1 {
@@ -91,6 +92,18 @@ footer {
   color: gray;
 }
 
+/* ✅ Profile Image */
+.profile-pic {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3b82f6;
+}
+
 @media(min-width:768px){
   .projects {
     grid-template-columns: 1fr 1fr;
@@ -102,6 +115,9 @@ footer {
 <body>
 
 <header>
+  <!-- ✅ YOUR IMAGE -->
+  <img src="tobi__fatai_b0f9892d9aff4bcbbfe1d6c81aeab03b.jpg" alt="Profile Photo" class="profile-pic">
+
   <h1>AKEEM FATAI OLUWATOBI</h1>
   <p>Web Developer • Designer • Creator</p>
 
@@ -129,7 +145,6 @@ footer {
 
   <div class="projects">
 
-    <!-- FARM PROJECT -->
     <div class="card">
       <img src="logo.jpg" alt="Farm Project">
       <h3>Poultry Farm Website</h3>
@@ -140,7 +155,6 @@ footer {
       </a>
     </div>
 
-    <!-- HOTEL PROJECT -->
     <div class="card">
       <img src="Screenshot_20260405-101731~2.png" alt="Hotel Project">
       <h3>Hotel Website</h3>
@@ -165,12 +179,11 @@ footer {
 </section>
 
 <section>
-   <h3>Contact</h3>
+  <h3>Contact</h3>
   <p>PHONE:- 09158689138</p>
-   <p>MAIL:- Akeem.fatai15@gmail.com</p>
+  <p>MAIL:- Akeem.fatai15@gmail.com</p>
   <p>Reach out to me instantly.</p>
 
-   <!-- ✅ ADD THIS FORM -->
   <form action="https://formspree.io/f/maqlpaqk" method="POST" style="margin-top:30px;">
 
     <input type="text" name="name" placeholder="Your Name/ Company Name " required 
@@ -192,4 +205,4 @@ footer {
 </footer>
 
 </body>
-          </html>
+</html>
