@@ -50,11 +50,6 @@ button {
   color: white;
 }
 
-.article-btn {
-  background: #3b82f6;
-  color: white;
-}
-
 section {
   padding: 40px 20px;
 }
@@ -83,7 +78,7 @@ section {
   color: white;
 }
 
-.skills-container span {
+.skills span {
   background: #1e293b;
   padding: 10px;
   margin: 5px;
@@ -108,11 +103,80 @@ footer {
   border: 3px solid #3b82f6;
 }
 
+/* 🔥 MARQUEE */
+.marquee-section {
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.marquee h1 {
+  display: inline-block;
+  font-size: 35px;
+  font-weight: bold;
+  opacity: 0.05;
+}
+
+.marquee.left h1 {
+  animation: moveLeft 15s linear infinite;
+}
+
+.marquee.right h1 {
+  animation: moveRight 15s linear infinite;
+}
+
+@keyframes moveLeft {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes moveRight {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0%); }
+}
+
 @media(min-width:768px){
   .projects {
     grid-template-columns: 1fr 1fr;
   }
 }
+/* 🔥 FLOATING SOCIAL POPUP */
+.social-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+.social-popup a {
+  width: 45px;
+  height: 45px;
+  background: #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.social-popup a:hover {
+  transform: scale(1.15);
+}
+
+/* BRAND COLORS ON HOVER */
+.social-popup a:nth-child(1):hover { background:#25D366; }
+.social-popup a:nth-child(2):hover { background:#E4405F; }
+.social-popup a:nth-child(3):hover { background:#1877F2; }
+.social-popup a:nth-child(4):hover { background:#0A66C2; }
 </style>
 </head>
 
@@ -120,7 +184,7 @@ footer {
 
 <header>
 
-<img src="tobi__fatai_b0f9892d9aff4bcbbfe1d6c81aeab03b.jpg" alt="Profile Photo" class="profile-pic">
+<img src="tobi__fatai_b0f9892d9aff4bcbbfe1d6c81aeab03b.jpg" class="profile-pic">
 
 <h1>AKEEM FATAI OLUWATOBI</h1>
 <p>Web Developer • Designer • Creator</p>
@@ -130,11 +194,11 @@ footer {
 <a href="about.html"><button>About</button></a>
 <a href="projects.html"><button>Projects</button></a>
 <a href="skills.html"><button>Skills</button></a>
-<a href="article.html"><button class="article-btn">Articles</button></a>
+<a href="article.html"><button>Articles</button></a>
 <a href="contact.html"><button>Contact</button></a>
 
 <a href="https://wa.me/2349158689138" target="_blank">
-<button class="whatsapp">WhatsApp</button>
+<button class="whatsapp">Chat on WhatsApp</button>
 </a>
 
 <a href="oluwatobi cvcvcvc c.pdf" download>
@@ -142,26 +206,40 @@ footer {
 </a>
 
 </div>
+
 </header>
 
 <section>
-<h2><a href="about.html" style="color:white;text-decoration:none;">About Me</a></h2>
+<h2>About Me</h2>
 <p>
-I am a dedicated and versatile professional with experience in web development, security operations, and industrial work. I began my career as a forklift operator and security personnel, where I developed discipline, safety awareness, attention to detail, and the ability to perform under pressure.
+I am a dedicated and versatile professional with a strong background in web development, security operations, and industrial work. My journey started with hands-on roles as a forklift operator and security personnel, where I developed discipline, attention to detail, safety awareness, and the ability to work effectively under pressure.
 
-Driven by a passion for technology, I transitioned into web development and design, where I create modern, responsive, and user-friendly websites for farms, hotels, and startups.
+As a forklift operator, I gained practical experience in handling heavy equipment, managing warehouse operations, and ensuring safety compliance at all times. Working in security further strengthened my vigilance, risk assessment skills, and commitment to protecting people and property.
 
-I focus on building visually appealing and functional platforms that help businesses grow their online presence.
+Driven by a passion for technology, I transitioned into web development and design, where I create modern, responsive, and user-friendly websites for farms, hotels, and startups. I focus on building visually appealing and functional platforms that help businesses grow their online presence.
+
+I am committed to continuous learning and improvement, combining practical experience with technical skills to deliver reliable, creative, and results-driven solutions.
 </p>
 </section>
 
+<!-- 🔥 MARQUEE -->
+<section class="marquee-section">
+<div class="marquee left">
+<h1>HIGHLIGHTS FROM MY RECENT PROJECTS • HIGHLIGHTS FROM MY RECENT PROJECTS •</h1>
+</div>
+
+<div class="marquee right">
+<h1>HIGHLIGHTS FROM MY RECENT PROJECTS • HIGHLIGHTS FROM MY RECENT PROJECTS •</h1>
+</div>
+</section>
+
 <section>
-<h2><a href="projects.html" style="color:white;text-decoration:none;">My Projects</a></h2>
+<h2>My Projects</h2>
 
 <div class="projects">
 
 <div class="card">
-<img src="logo.jpg" alt="Farm Project">
+<img src="logo.jpg">
 <h3>Poultry Farm Website</h3>
 <p>Modern farm website with ordering and contact features.</p>
 <a href="https://tobi1533.github.io/Defamily-farm/" target="_blank">
@@ -170,7 +248,7 @@ I focus on building visually appealing and functional platforms that help busine
 </div>
 
 <div class="card">
-<img src="Screenshot_20260405-101731~2.png" alt="Hotel Project">
+<img src="Screenshot_20260405-101731~2.png">
 <h3>Hotel Website</h3>
 <p>Elegant hotel website with booking-style design.</p>
 <a href="https://tobi1533.github.io/shangrila-view-hotel/" target="_blank">
@@ -182,9 +260,10 @@ I focus on building visually appealing and functional platforms that help busine
 </section>
 
 <section>
-<h2><a href="skills.html" style="color:white;text-decoration:none;">Skills</a></h2>
+<h2>Skills</h2>
 
-<div class="skills-container">
+<div class="skills">
+
 <span>HTML5</span>
 <span>CSS3</span>
 <span>JavaScript</span>
@@ -193,24 +272,27 @@ I focus on building visually appealing and functional platforms that help busine
 <span>Git & GitHub</span>
 <span>Website Deployment</span>
 <span>SEO Basics</span>
+
 <span>Cybersecurity Fundamentals</span>
 <span>Network Security</span>
 <span>Web Application Security</span>
-<span>OWASP Top 10</span>
+<span>Vulnerability Assessment</span>
+<span>Penetration Testing (Beginner)</span>
 <span>Ethical Hacking Basics</span>
+<span>OWASP Top 10</span>
+<span>Security Awareness</span>
+
 <span>Linux (Basic)</span>
+<span>Command Line (CLI)</span>
 <span>Wireshark (Basic)</span>
 <span>Nmap (Basic)</span>
+<span>Burp Suite (Basic)</span>
+
 </div>
 </section>
 
 <section>
-<h2><a href="article.html" style="color:white;text-decoration:none;">Articles</a></h2>
-<p>Click to read my cybersecurity and web development articles.</p>
-</section>
-
-<section>
-<h2><a href="contact.html" style="color:white;text-decoration:none;">Contact</a></h2>
+<h2>Contact</h2>
 
 <p>PHONE:- 09158689138</p>
 <p>MAIL:- Akeem.fatai15@gmail.com</p>
@@ -224,7 +306,7 @@ style="width:100%; padding:12px; margin:10px 0; border-radius:8px; border:none;"
 style="width:100%; padding:12px; margin:10px 0; border-radius:8px; border:none;"></textarea>
 
 <button type="submit" 
-style="padding:12px 25px; background:#d4af37; border:none; border-radius:25px; cursor:pointer;">
+style="padding:12px 25px; background:#d4af37; border:none; border-radius:25px;">
 Send Message
 </button>
 
@@ -234,6 +316,29 @@ Send Message
 <footer>
 © 2026 Akeem Fatai Oluwatobi. All rights reserved.
 </footer>
+<!-- 🔥 FLOATING SOCIAL POPUP -->
+<div class="social-popup">
+
+  <a href="https://wa.me/2349158689138" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <a href="https://instagram.com/YOUR_USERNAME" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="https://facebook.com/YOUR_USERNAME" target="_blank">
+    <i class="fab fa-facebook"></i>
+  </a>
+
+  <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank">
+    <i class="fab fa-linkedin"></i>
+  </a>
+
+</div>
+
+<!-- ICON LIBRARY -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </body>
-</html>
+  </html>
