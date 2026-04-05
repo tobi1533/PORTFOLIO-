@@ -3,34 +3,190 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects</title>
+<title>Projects - Akeem Fatai Oluwatobi</title>
 
 <style>
-body { margin:0; font-family: Arial; background:#0f172a; color:white; }
-.card { background:#1e293b; padding:20px; border-radius:15px; margin:20px; }
-button { background:#3b82f6; color:white; padding:10px; border:none; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* 🔥 BACKGROUND MOVING TEXT */
+.background-text {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.background-text span {
+  position: absolute;
+  color: rgba(56, 189, 248, 0.07);
+  font-size: 20px;
+  white-space: nowrap;
+  animation: moveText 20s linear infinite;
+}
+
+@keyframes moveText {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-100vh); }
+}
+
+/* CONTENT */
+header {
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.subtitle {
+  color: #38bdf8;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* PROJECT CARD */
+.project {
+  background: rgba(30, 41, 59, 0.9);
+  margin-bottom: 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+  transition: 0.3s;
+}
+
+.project:hover {
+  transform: translateY(-6px);
+}
+
+.project img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 15px;
+}
+
+.project h3 {
+  margin: 10px 0;
+}
+
+.project p {
+  color: #cbd5f5;
+}
+
+.project a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #22c55e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid #1e293b;
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+footer a {
+  color: #38bdf8;
+  margin: 0 10px;
+  text-decoration: none;
+}
 </style>
 </head>
 
 <body>
 
-<h2 style="padding:20px;">My Projects</h2>
-
-<div class="card">
-<h3>Poultry Farm Website</h3>
-<a href="https://tobi1533.github.io/Defamily-farm/" target="_blank">
-<button>View Live</button>
-</a>
+<!-- 🔥 MOVING CYBER BACKGROUND -->
+<div class="background-text">
+  <span style="left:10%">SECURITY • CODE • FIREWALL • ENCRYPTION •</span>
+  <span style="left:30%">CYBER • DEFENSE • AUTH • API •</span>
+  <span style="left:50%">HTML • CSS • JAVASCRIPT • WEB •</span>
+  <span style="left:70%">DATA • SYSTEM • PROTECT •</span>
+  <span style="left:85%">NETWORK • CLOUD • SAFE •</span>
 </div>
 
-<div class="card">
-<h3>Hotel Website</h3>
-<a href="https://tobi1533.github.io/shangrila-view-hotel/" target="_blank">
-<button>View Live</button>
-</a>
+<header>
+  <h1>Projects</h1>
+  <p class="subtitle">Secure Code. Smart Design. Strong Systems.</p>
+</header>
+
+<div class="container">
+
+  <!-- PROJECT 1 -->
+  <div class="project">
+    <img src="logo.jpg" alt="Farm Website">
+    <div class="project-content">
+      <h3>Poultry Farm Website</h3>
+      <p>Modern farm website with ordering and contact features.</p>
+      <a href="https://tobi1533.github.io/Defamily-farm/" target="_blank">
+        View Live Site →
+      </a>
+    </div>
+  </div>
+
+  <!-- PROJECT 2 -->
+  <div class="project">
+    <img src="Screenshot_20260405-101731~2.png" alt="Hotel Website">
+    <div class="project-content">
+      <h3>Hotel Website</h3>
+      <p>Elegant hotel website with booking-style design.</p>
+      <a href="https://tobi1533.github.io/shangrila-view-hotel/" target="_blank">
+        View Live Site →
+      </a>
+    </div>
+  </div>
+
+  <!-- PROJECT 3 -->
+  <div class="project">
+    <img src="tobi__fatai_b0f9892d9aff4bcbbfe1d6c81aeab03b.jpg" alt="Cybersecurity Portfolio">
+    <div class="project-content">
+      <h3>Cybersecurity Portfolio</h3>
+      <p>A personal cybersecurity and web development portfolio showcasing skills, projects, and secure systems.</p>
+      <a href="#" target="_blank">
+        View Project →
+      </a>
+    </div>
+  </div>
+
 </div>
 
-<a href="index.html" style="padding:20px;display:block;">⬅ Back Home</a>
+<footer>
+  <p>LET'S CONNECT</p>
+  <p>Contact: Akeem.fatai15@gmail.com</p>
+  <p>Phone: 09158689138</p>
+
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="article.html">Articles</a>
+  </div>
+
+  <p>Design by RDG</p>
+</footer>
 
 </body>
 </html>
