@@ -3,358 +3,467 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akeem Fatai Oluwatobi </title>
-
+<title>Akeem Fatai Oluwatobi</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: white;
-}
-
-header {
-  text-align: center;
-  padding: 60px 20px;
-  position: relative;
-}
-
-h1 {
-  font-size: 40px;
-}
-
-p {
-  color: #cbd5f5;
-}
-
-.buttons {
-  margin-top: 20px;
-}
-
-button {
-  padding: 12px 20px;
-  margin: 5px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.whatsapp {
-  background: #25D366;
-  color: white;
-}
-
-.cv {
-  background: #334155;
-  color: white;
-}
-
-section {
-  padding: 40px 20px;
-}
-
-.projects {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-
-.card {
-  background: #1e293b;
-  padding: 20px;
-  border-radius: 15px;
-}
-
-.card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.card button {
-  width: 100%;
-  margin-top: 10px;
-  background: #3b82f6;
-  color: white;
-}
-
-.skills span {
-  background: #1e293b;
-  padding: 10px;
-  margin: 5px;
-  display: inline-block;
-  border-radius: 10px;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  color: gray;
-}
-
-.profile-pic {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #3b82f6;
-}
-
-/* 🔥 MARQUEE */
-.marquee-section {
-  overflow: hidden;
-  padding: 20px 0;
-}
-
-.marquee {
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.marquee h1 {
-  display: inline-block;
-  font-size: 35px;
-  font-weight: bold;
-  opacity: 0.05;
-}
-
-.marquee.left h1 {
-  animation: moveLeft 15s linear infinite;
-}
-
-.marquee.right h1 {
-  animation: moveRight 15s linear infinite;
-}
-
-@keyframes moveLeft {
-  from { transform: translateX(0%); }
-  to { transform: translateX(-100%); }
-}
-
-@keyframes moveRight {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0%); }
-}
-
-@media(min-width:768px){
-  .projects {
-    grid-template-columns: 1fr 1fr;
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --neon:#00f5ff;--neon2:#7b2fff;--neon3:#ff2d78;--neon4:#00ff88;
+    --dark:#020817;--dark2:#0a1628;--dark3:#0f1f3d;--card:#0d1b2e;
+    --text:#e2e8f0;--sub:#94a3b8;
   }
-}
-/* 🔥 FLOATING SOCIAL POPUP */
-.social-popup {
-  position: fixed;
-  bottom: 20px;
-  right: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 999;
-}
+  body{
+    font-family:'Segoe UI',Arial,sans-serif;
+    background:var(--dark);color:var(--text);
+    overflow-x:hidden;
+  }
 
-.social-popup a {
-  width: 45px;
-  height: 45px;
-  background: #1e293b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  color: white;
-  font-size: 20px;
-  transition: 0.3s;
-}
+  #particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
 
-.social-popup a:hover {
-  transform: scale(1.15);
-}
+  .orb{position:fixed;border-radius:50%;filter:blur(80px);opacity:.18;animation:orbFloat 8s ease-in-out infinite alternate;z-index:0}
+  .orb1{width:500px;height:500px;background:var(--neon2);top:-100px;left:-100px;animation-delay:0s}
+  .orb2{width:400px;height:400px;background:var(--neon);bottom:-80px;right:-80px;animation-delay:-3s}
+  .orb3{width:300px;height:300px;background:var(--neon3);top:40%;left:30%;animation-delay:-6s}
+  @keyframes orbFloat{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,30px) scale(1.15)}}
 
-/* BRAND COLORS ON HOVER */
-.social-popup a:nth-child(1):hover { background:#25D366; }
-.social-popup a:nth-child(2):hover { background:#E4405F; }
-.social-popup a:nth-child(3):hover { background:#1877F2; }
-.social-popup a:nth-child(4):hover { background:#0A66C2; }
+  .grid-bg{
+    position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;
+    background-image:
+      linear-gradient(rgba(0,245,255,.04) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(0,245,255,.04) 1px,transparent 1px);
+    background-size:60px 60px;
+    animation:gridPulse 4s ease-in-out infinite alternate;
+  }
+  @keyframes gridPulse{from{opacity:.5}to{opacity:1}}
+
+  .scanline{
+    position:fixed;top:0;left:0;width:100%;height:3px;
+    background:linear-gradient(90deg,transparent,var(--neon),transparent);
+    z-index:1;opacity:.5;
+    animation:scan 6s linear infinite;
+  }
+  @keyframes scan{from{top:0}to{top:100%}}
+
+  .content{position:relative;z-index:2}
+
+  header{text-align:center;padding:80px 20px 50px;position:relative}
+
+  .profile-wrap{position:relative;display:inline-block;margin-bottom:24px;cursor:pointer}
+  .profile-pic{
+    width:110px;height:110px;border-radius:50%;object-fit:cover;
+    border:3px solid transparent;
+    background:linear-gradient(var(--dark2),var(--dark2)) padding-box,
+               linear-gradient(135deg,var(--neon),var(--neon2),var(--neon3)) border-box;
+    position:relative;z-index:2;transition:transform .4s;display:block;
+  }
+  .profile-wrap:hover .profile-pic{transform:scale(1.07) rotate(3deg)}
+  .ring{
+    position:absolute;top:-8px;left:-8px;width:calc(100% + 16px);height:calc(100% + 16px);
+    border-radius:50%;border:2px solid var(--neon);
+    animation:ringPulse 2s ease-in-out infinite;z-index:1;opacity:.7;
+  }
+  .ring2{
+    position:absolute;top:-16px;left:-16px;width:calc(100% + 32px);height:calc(100% + 32px);
+    border-radius:50%;border:1px solid var(--neon2);
+    animation:ringPulse 2s ease-in-out infinite reverse;z-index:1;opacity:.4;
+  }
+  @keyframes ringPulse{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.08);opacity:.2}}
+
+  h1{
+    font-size:clamp(28px,6vw,52px);font-weight:900;
+    background:linear-gradient(135deg,#fff 0%,var(--neon) 40%,var(--neon2) 70%,var(--neon3) 100%);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    letter-spacing:2px;text-transform:uppercase;
+    animation:titleShimmer 4s ease-in-out infinite alternate;
+  }
+  @keyframes titleShimmer{from{filter:brightness(1)}to{filter:brightness(1.3)}}
+
+  .subtitle{
+    color:var(--sub);font-size:15px;margin-top:8px;letter-spacing:1px;
+    display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;
+  }
+  .dot{width:5px;height:5px;border-radius:50%;background:var(--neon);display:inline-block;animation:blink 1.5s infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+
+  .nav-wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:28px}
+  .nav-btn{
+    padding:10px 22px;border-radius:40px;border:1px solid rgba(0,245,255,.3);
+    background:rgba(0,245,255,.05);color:var(--neon);font-weight:600;font-size:13px;
+    cursor:pointer;text-decoration:none;letter-spacing:1px;
+    transition:all .3s;position:relative;overflow:hidden;backdrop-filter:blur(4px);
+  }
+  .nav-btn::before{
+    content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+    background:linear-gradient(90deg,transparent,rgba(0,245,255,.2),transparent);
+    transition:left .4s;
+  }
+  .nav-btn:hover::before{left:100%}
+  .nav-btn:hover{border-color:var(--neon);box-shadow:0 0 20px rgba(0,245,255,.4),inset 0 0 10px rgba(0,245,255,.1);transform:translateY(-2px)}
+  .nav-btn.green{color:var(--neon4);border-color:rgba(0,255,136,.3);background:rgba(0,255,136,.05)}
+  .nav-btn.green:hover{box-shadow:0 0 20px rgba(0,255,136,.4)}
+  .nav-btn.pink{color:var(--neon3);border-color:rgba(255,45,120,.3);background:rgba(255,45,120,.05)}
+  .nav-btn.pink:hover{box-shadow:0 0 20px rgba(255,45,120,.4)}
+
+  section{padding:50px 24px;max-width:900px;margin:0 auto}
+  .section-title{
+    font-size:22px;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+    margin-bottom:28px;display:flex;align-items:center;gap:12px;
+  }
+  .section-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--neon),transparent)}
+  .section-title span{color:var(--neon)}
+
+  .about-card{
+    background:linear-gradient(135deg,rgba(0,245,255,.05),rgba(123,47,255,.05));
+    border:1px solid rgba(0,245,255,.15);border-radius:20px;padding:28px;
+    position:relative;overflow:hidden;transition:all .4s;
+  }
+  .about-card::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,var(--neon2),var(--neon),var(--neon3));
+  }
+  .about-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,245,255,.1)}
+  .about-card p{line-height:1.8;color:var(--sub);font-size:15px}
+
+  .marquee-section{overflow:hidden;padding:10px 0}
+  .marquee-track{
+    white-space:nowrap;overflow:hidden;
+    font-size:clamp(24px,5vw,40px);font-weight:900;
+    opacity:.06;letter-spacing:3px;
+    animation:marqLeft 18s linear infinite;color:#fff;
+  }
+  .marquee-track.rev{animation:marqRight 18s linear infinite}
+  @keyframes marqLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes marqRight{from{transform:translateX(-50%)}to{transform:translateX(0%)}}
+
+  .projects{display:grid;grid-template-columns:1fr;gap:22px}
+  @media(min-width:600px){.projects{grid-template-columns:1fr 1fr}}
+
+  .card{
+    background:var(--card);border:1px solid rgba(0,245,255,.1);
+    border-radius:20px;overflow:hidden;position:relative;transition:all .4s;
+  }
+  .card-img{
+    width:100%;height:180px;object-fit:cover;
+    transition:transform .5s;filter:brightness(.8) saturate(1.2);display:block;
+  }
+  .card:hover .card-img{transform:scale(1.07)}
+  .card-body{padding:20px}
+  .card-body h3{font-size:17px;font-weight:700;margin-bottom:6px;color:#e2e8f0}
+  .card-body p{color:var(--sub);font-size:13px;line-height:1.6;margin-bottom:14px}
+  .card-glow{
+    position:absolute;top:0;left:0;width:100%;height:100%;
+    border-radius:20px;pointer-events:none;opacity:0;
+    box-shadow:inset 0 0 40px rgba(0,245,255,.15);transition:opacity .4s;
+  }
+  .card:hover{transform:translateY(-6px) scale(1.01);border-color:rgba(0,245,255,.35);box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 30px rgba(0,245,255,.1)}
+  .card:hover .card-glow{opacity:1}
+  .card-btn{
+    display:block;width:100%;padding:11px;
+    background:linear-gradient(135deg,rgba(0,245,255,.1),rgba(123,47,255,.1));
+    border:1px solid rgba(0,245,255,.25);border-radius:12px;
+    color:var(--neon);font-weight:700;font-size:13px;letter-spacing:1px;
+    text-align:center;text-decoration:none;transition:all .3s;cursor:pointer;
+  }
+  .card-btn:hover{background:linear-gradient(135deg,rgba(0,245,255,.25),rgba(123,47,255,.25));box-shadow:0 0 20px rgba(0,245,255,.3)}
+
+  .skills-wrap{display:flex;flex-wrap:wrap;gap:10px}
+  .skill-chip{
+    padding:9px 16px;border-radius:30px;font-size:13px;font-weight:600;
+    letter-spacing:.5px;position:relative;overflow:hidden;
+    cursor:default;transition:all .3s;border:1px solid;
+  }
+  .skill-chip.web{background:rgba(0,245,255,.06);border-color:rgba(0,245,255,.25);color:var(--neon)}
+  .skill-chip.sec{background:rgba(255,45,120,.06);border-color:rgba(255,45,120,.25);color:var(--neon3)}
+  .skill-chip.tool{background:rgba(123,47,255,.06);border-color:rgba(123,47,255,.25);color:#a78bfa}
+  .skill-chip:hover{transform:translateY(-3px) scale(1.04)}
+  .skill-chip.web:hover{box-shadow:0 8px 25px rgba(0,245,255,.3)}
+  .skill-chip.sec:hover{box-shadow:0 8px 25px rgba(255,45,120,.3)}
+  .skill-chip.tool:hover{box-shadow:0 8px 25px rgba(123,47,255,.3)}
+
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:20px}
+  @media(min-width:600px){.contact-grid{grid-template-columns:1fr 1fr}}
+  .contact-info{
+    background:linear-gradient(135deg,rgba(0,245,255,.04),rgba(123,47,255,.04));
+    border:1px solid rgba(0,245,255,.15);border-radius:20px;padding:28px;
+  }
+  .contact-info p{display:flex;align-items:center;gap:12px;margin-bottom:16px;font-size:14px;color:var(--sub)}
+  .contact-info i{color:var(--neon);font-size:18px;width:22px}
+  .contact-form{background:rgba(13,27,46,.8);border:1px solid rgba(0,245,255,.15);border-radius:20px;padding:28px}
+  .form-field{
+    width:100%;margin-bottom:16px;padding:13px 16px;
+    background:rgba(0,0,0,.3);border:1px solid rgba(0,245,255,.15);border-radius:12px;
+    color:var(--text);font-size:14px;font-family:inherit;
+    transition:border-color .3s,box-shadow .3s;outline:none;resize:vertical;
+  }
+  .form-field:focus{border-color:var(--neon);box-shadow:0 0 20px rgba(0,245,255,.15)}
+  .submit-btn{
+    width:100%;padding:14px;border:none;border-radius:30px;
+    background:linear-gradient(135deg,var(--neon2),var(--neon),var(--neon3));
+    background-size:200% 200%;
+    color:#fff;font-weight:800;font-size:14px;letter-spacing:2px;
+    cursor:pointer;transition:all .3s;text-transform:uppercase;
+    animation:gradShift 3s ease infinite;
+  }
+  @keyframes gradShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  .submit-btn:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(0,245,255,.4)}
+
+  footer{
+    text-align:center;padding:30px 20px;color:var(--sub);font-size:13px;
+    border-top:1px solid rgba(0,245,255,.08);position:relative;z-index:2;
+  }
+  footer span{
+    background:linear-gradient(90deg,var(--neon),var(--neon2));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700;
+  }
+
+  .social-popup{position:fixed;bottom:24px;right:16px;display:flex;flex-direction:column;gap:10px;z-index:999}
+  .social-popup a{
+    width:46px;height:46px;display:flex;align-items:center;justify-content:center;
+    border-radius:50%;background:rgba(13,27,46,.9);border:1px solid rgba(0,245,255,.2);
+    color:#fff;font-size:18px;text-decoration:none;transition:all .3s;backdrop-filter:blur(6px);
+  }
+  .social-popup a:hover{transform:scale(1.15) translateX(-4px)}
+  .social-popup a.wa:hover{background:#25D366;border-color:#25D366;box-shadow:0 0 20px rgba(37,211,102,.5)}
+  .social-popup a.ig:hover{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);border-color:#e6683c;box-shadow:0 0 20px rgba(220,39,67,.5)}
+  .social-popup a.fb:hover{background:#1877F2;border-color:#1877F2;box-shadow:0 0 20px rgba(24,119,242,.5)}
+  .social-popup a.li:hover{background:#0A66C2;border-color:#0A66C2;box-shadow:0 0 20px rgba(10,102,194,.5)}
+
+  .status-badge{
+    display:inline-flex;align-items:center;gap:7px;
+    padding:6px 14px;border-radius:20px;
+    background:rgba(0,255,136,.08);border:1px solid rgba(0,255,136,.25);
+    color:var(--neon4);font-size:12px;font-weight:600;letter-spacing:.5px;margin-top:10px;
+  }
+  .status-dot{width:7px;height:7px;border-radius:50%;background:var(--neon4);animation:blink 1.2s infinite}
 </style>
 </head>
-
 <body>
 
+<canvas id="particles"></canvas>
+<div class="grid-bg"></div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+<div class="scanline"></div>
+
+<div class="content">
+
 <header>
+  <div class="profile-wrap">
+    <div class="ring"></div>
+    <div class="ring2"></div>
+    <img src="tobi__fatai_b0f9892d9aff4bcbbfe1d6c81aeab03b.jpg" class="profile-pic" alt="Akeem Fatai Oluwatobi">
+  </div>
 
-<img src="tobi__fatai_b0f9892d9aff4bcbbfe1d6c81aeab03b.jpg" class="profile-pic">
+  <h1>Akeem Fatai Oluwatobi</h1>
+  <div class="subtitle">
+    <span>Cybersecurity Enthusiast</span>
+    <span class="dot"></span>
+    <span>Web Developer</span>
+    <span class="dot"></span>
+    <span>Secure &amp; Creative Designer</span>
+  </div>
+  <div><span class="status-badge"><span class="status-dot"></span>Available for work</span></div>
 
-<h1>AKEEM FATAI OLUWATOBI</h1>
-<p>Cybersecurity Enthusiast • Web Developer • Secure & Creative Designer</p>
-
-<div class="buttons">
-
-<a href="about.html"><button>About</button></a>
-<a href="projects.html"><button>Projects</button></a>
-<a href="skills.html"><button>Skills</button></a>
-<a href="article.html"><button>Articles</button></a>
-<a href="contact.html"><button>Contact</button></a>
-
-<a href="https://wa.me/2349158689138" target="_blank">
-<button class="whatsapp">Chat on WhatsApp</button>
-</a>
-
-<a href="CYBER SECURITY CV LATEST .pdf" download>
-<button class="cv">Download CV</button>
-</a>
-
-</div>
-
+  <nav class="nav-wrap">
+    <a href="about.html" class="nav-btn">About</a>
+    <a href="projects.html" class="nav-btn">Projects</a>
+    <a href="skills.html" class="nav-btn">Skills</a>
+    <a href="article.html" class="nav-btn">Articles</a>
+    <a href="contact.html" class="nav-btn">Contact</a>
+    <a href="https://wa.me/2349158689138" target="_blank" class="nav-btn green"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a href="CYBER SECURITY CV LATEST .pdf" download class="nav-btn pink"><i class="fas fa-download"></i> Download CV</a>
+  </nav>
 </header>
 
-<section>
-<h2>About Me</h2>
-<p>
-I am a dedicated and versatile professional with a strong background in web development, security operations, and industrial work. My journey started with hands-on roles as a forklift operator and security personnel, where I developed discipline, attention to detail, safety awareness, and the ability to work effectively under pressure.
-
-As a forklift operator, I gained practical experience in handling heavy equipment, managing warehouse operations, and ensuring safety compliance at all times. Working in security further strengthened my vigilance, risk assessment skills, and commitment to protecting people and property.
-
-Driven by a passion for technology, I transitioned into web development and design, where I create modern, responsive, and user-friendly websites for farms, hotels, and startups. I focus on building visually appealing and functional platforms that help businesses grow their online presence.
-
-I am committed to continuous learning and improvement, combining practical experience with technical skills to deliver reliable, creative, and results-driven solutions.
-</p>
-</section>
-
-<!-- 🔥 MARQUEE -->
-<section class="marquee-section">
-<div class="marquee left">
-<h1>HIGHLIGHTS FROM MY RECENT PROJECTS • HIGHLIGHTS FROM MY RECENT PROJECTS •</h1>
+<div class="marquee-section">
+  <div class="marquee-track">HIGHLIGHTS FROM MY RECENT PROJECTS &nbsp;&bull;&nbsp; HIGHLIGHTS FROM MY RECENT PROJECTS &nbsp;&bull;&nbsp; HIGHLIGHTS FROM MY RECENT PROJECTS &nbsp;&bull;&nbsp;</div>
+  <div class="marquee-track rev">HIGHLIGHTS FROM MY RECENT PROJECTS &nbsp;&bull;&nbsp; HIGHLIGHTS FROM MY RECENT PROJECTS &nbsp;&bull;&nbsp; HIGHLIGHTS FROM MY RECENT PROJECTS &nbsp;&bull;&nbsp;</div>
 </div>
-
-<div class="marquee right">
-<h1>HIGHLIGHTS FROM MY RECENT PROJECTS • HIGHLIGHTS FROM MY RECENT PROJECTS •</h1>
-</div>
-</section>
 
 <section>
-<h2>My Projects</h2>
-
-<div class="projects">
-
-<div class="card">
-<img src="logo.jpg">
-<h3>Poultry Farm Website</h3>
-<p>Modern farm website with ordering and contact features.</p>
-<a href="https://tobi1533.github.io/Defamily-farm/" target="_blank">
-<button>View Live Site</button>
-</a>
-</div>
-  <div class="card">
-<img src="logo2.png">
-<h3> SECURITY SERVICE Website</h3>
-<p>SECURITY SERVICE website with ordering and contact features.</p>
-<a href="https://tobi1533.github.io/TOP-NOTCH-training-and-protection-consult-/" target="_blank">
-<button>View Live Site</button>
-</a>
+  <h2 class="section-title"><span>//</span> About Me</h2>
+  <div class="about-card">
+    <p>
+      I am a dedicated and versatile professional with a strong background in web development, security operations, and industrial work. My journey started with hands-on roles as a forklift operator and security personnel, where I developed discipline, attention to detail, safety awareness, and the ability to work effectively under pressure.
+      <br><br>
+      As a forklift operator, I gained practical experience in handling heavy equipment, managing warehouse operations, and ensuring safety compliance at all times. Working in security further strengthened my vigilance, risk assessment skills, and commitment to protecting people and property.
+      <br><br>
+      Driven by a passion for technology, I transitioned into web development and design, where I create modern, responsive, and user-friendly websites for farms, hotels, and startups. I am committed to continuous learning and improvement, combining practical experience with technical skills to deliver reliable, creative, and results-driven solutions.
+    </p>
   </div>
+</section>
 
-<div class="card">
-<img src="Screenshot_20260405-101731~2.png">
-<h3>Hotel Website</h3>
-<p>Elegant hotel website with booking-style design.</p>
-<a href="https://tobi1533.github.io/shangrila-view-hotel/" target="_blank">
-<button>View Live Site</button>
-</a>
-</div>
-  <div class="card">
-  <img src="Logoo.png">
-  <h3>Living Hope Foundation</h3>
-  <p>Non-profit foundation website with donation and outreach features.</p>
-  <a href="https://tobi1533.github.io/LIVING-HOPE-FOUNDATION-/?#" target="_blank">
-    <button>View Live Site</button>
-  </a>
+<section>
+  <h2 class="section-title"><span>//</span> My Projects</h2>
+  <div class="projects">
+
+    <div class="card">
+      <img src="logo.jpg" class="card-img" alt="Poultry Farm Website">
+      <div class="card-glow"></div>
+      <div class="card-body">
+        <h3>Poultry Farm Website</h3>
+        <p>Modern farm website with ordering and contact features.</p>
+        <a href="https://tobi1533.github.io/Defamily-farm/" target="_blank" class="card-btn">View Live Site &#8599;</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="logo2.png" class="card-img" alt="Security Service Website">
+      <div class="card-glow"></div>
+      <div class="card-body">
+        <h3>Security Service Website</h3>
+        <p>Security service website with contact and training features.</p>
+        <a href="https://tobi1533.github.io/TOP-NOTCH-training-and-protection-consult-/" target="_blank" class="card-btn">View Live Site &#8599;</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="Screenshot_20260405-101731~2.png" class="card-img" alt="Hotel Website">
+      <div class="card-glow"></div>
+      <div class="card-body">
+        <h3>Hotel Website</h3>
+        <p>Elegant hotel website with booking-style design.</p>
+        <a href="https://tobi1533.github.io/shangrila-view-hotel/" target="_blank" class="card-btn">View Live Site &#8599;</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="Logoo.png" class="card-img" alt="Living Hope Foundation">
+      <div class="card-glow"></div>
+      <div class="card-body">
+        <h3>Living Hope Foundation</h3>
+        <p>Non-profit foundation website with donation and outreach features.</p>
+        <a href="https://tobi1533.github.io/LIVING-HOPE-FOUNDATION-/?#" target="_blank" class="card-btn">View Live Site &#8599;</a>
+      </div>
+    </div>
+
   </div>
-
-</div>
 </section>
 
 <section>
-<h2>Skills</h2>
-
-<div class="skills">
-
-<span>HTML5</span>
-<span>CSS3</span>
-<span>JavaScript</span>
-<span>Responsive Design</span>
-<span>UI/UX Design</span>
-<span>Git & GitHub</span>
-<span>Website Deployment</span>
-<span>SEO Basics</span>
-
-<span>Cybersecurity Fundamentals</span>
-<span>Network Security</span>
-<span>Web Application Security</span>
-<span>Vulnerability Assessment</span>
-<span>Penetration Testing (Beginner)</span>
-<span>Ethical Hacking Basics</span>
-<span>OWASP Top 10</span>
-<span>Security Awareness</span>
-
-<span>Linux (Basic)</span>
-<span>Command Line (CLI)</span>
-<span>Wireshark (Basic)</span>
-<span>Nmap (Basic)</span>
-<span>Burp Suite (Basic)</span>
-
-</div>
+  <h2 class="section-title"><span>//</span> Skills</h2>
+  <div class="skills-wrap">
+    <span class="skill-chip web">HTML5</span>
+    <span class="skill-chip web">CSS3</span>
+    <span class="skill-chip web">JavaScript</span>
+    <span class="skill-chip web">Responsive Design</span>
+    <span class="skill-chip web">UI/UX Design</span>
+    <span class="skill-chip web">Git &amp; GitHub</span>
+    <span class="skill-chip web">Website Deployment</span>
+    <span class="skill-chip web">SEO Basics</span>
+    <span class="skill-chip sec">Cybersecurity Fundamentals</span>
+    <span class="skill-chip sec">Network Security</span>
+    <span class="skill-chip sec">Web Application Security</span>
+    <span class="skill-chip sec">Vulnerability Assessment</span>
+    <span class="skill-chip sec">Penetration Testing (Beginner)</span>
+    <span class="skill-chip sec">Ethical Hacking Basics</span>
+    <span class="skill-chip sec">OWASP Top 10</span>
+    <span class="skill-chip sec">Security Awareness</span>
+    <span class="skill-chip tool">Linux (Basic)</span>
+    <span class="skill-chip tool">Command Line (CLI)</span>
+    <span class="skill-chip tool">Wireshark (Basic)</span>
+    <span class="skill-chip tool">Nmap (Basic)</span>
+    <span class="skill-chip tool">Burp Suite (Basic)</span>
+  </div>
 </section>
 
 <section>
-<h2>Contact</h2>
-
-<p>PHONE:- 09158689138</p>
-<p>MAIL:- Akeem.fatai15@gmail.com</p>
-
-<form action="https://formspree.io/f/maqlpaqk" method="POST">
-
-<input type="text" name="name" placeholder="Your Name/ Company Name" required 
-style="width:100%; padding:12px; margin:10px 0; border-radius:8px; border:none;">
-
-<textarea name="message" placeholder="Your Message" rows="5" required 
-style="width:100%; padding:12px; margin:10px 0; border-radius:8px; border:none;"></textarea>
-
-<button type="submit" 
-style="padding:12px 25px; background:#d4af37; border:none; border-radius:25px;">
-Send Message
-</button>
-
-</form>
+  <h2 class="section-title"><span>//</span> Contact</h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p><i class="fas fa-phone"></i> 09158689138</p>
+      <p><i class="fas fa-envelope"></i> Akeem.fatai15@gmail.com</p>
+      <p><i class="fab fa-whatsapp"></i> +234 915 868 9138</p>
+      <p><i class="fab fa-linkedin"></i> linkedin.com/in/oluwatobi-akeem</p>
+    </div>
+    <div class="contact-form">
+      <form action="https://formspree.io/f/maqlpaqk" method="POST">
+        <input type="text" name="name" placeholder="Your Name / Company Name" required class="form-field">
+        <textarea name="message" placeholder="Your Message" rows="4" required class="form-field"></textarea>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </div>
 </section>
 
 <footer>
-© 2026 Akeem Fatai Oluwatobi. All rights reserved.
+  <p>&copy; 2026 <span>Akeem Fatai Oluwatobi</span>. All rights reserved.</p>
 </footer>
-<!-- 🔥 FLOATING SOCIAL POPUP -->
-<div class="social-popup">
-
-  <a href="https://wa.me/2349158689138" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <a href="https://www.instagram.com/tobi__fatai?igsh=ZTFpZWdlY2VhOW9y" target="_blank">
-    <i class="fab fa-instagram"></i>
-  </a>
-
-  <a href="https://www.facebook.com/share/1BMtpWTc89/" target="_blank">
-    <i class="fab fa-facebook"></i>
-  </a>
-
-  <a href="https://www.linkedin.com/in/oluwatobi-akeem-4b16462b1?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
-    <i class="fab fa-linkedin"></i>
-  </a>
 
 </div>
 
-<!-- ICON LIBRARY -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<div class="social-popup">
+  <a href="https://wa.me/2349158689138" target="_blank" class="wa"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://www.instagram.com/tobi__fatai?igsh=ZTFpZWdlY2VhOW9y" target="_blank" class="ig"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.facebook.com/share/1BMtpWTc89/" target="_blank" class="fb"><i class="fab fa-facebook"></i></a>
+  <a href="https://www.linkedin.com/in/oluwatobi-akeem-4b16462b1?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="li"><i class="fab fa-linkedin"></i></a>
+</div>
+
+<script>
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let W, H;
+
+function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight}
+resize();
+window.addEventListener('resize',resize);
+
+const colors=['#00f5ff','#7b2fff','#ff2d78','#00ff88'];
+for(let i=0;i<90;i++){
+  particles.push({
+    x:Math.random()*window.innerWidth,
+    y:Math.random()*window.innerHeight,
+    r:Math.random()*1.5+.3,
+    vx:(Math.random()-.5)*.4,
+    vy:(Math.random()-.5)*.4,
+    color:colors[Math.floor(Math.random()*colors.length)],
+    alpha:Math.random()*.6+.2,
+    pulse:Math.random()*Math.PI*2
+  });
+}
+
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  particles.forEach((p,i)=>{
+    p.pulse+=.02;
+    const a=p.alpha*(0.5+0.5*Math.sin(p.pulse));
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=p.color;
+    ctx.globalAlpha=a;
+    ctx.fill();
+    ctx.globalAlpha=1;
+    p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0)p.x=W;if(p.x>W)p.x=0;
+    if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+    for(let j=i+1;j<particles.length;j++){
+      const q=particles[j];
+      const dx=p.x-q.x,dy=p.y-q.y;
+      const dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<100){
+        ctx.beginPath();
+        ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);
+        ctx.strokeStyle=p.color;
+        ctx.globalAlpha=(1-dist/100)*0.1;
+        ctx.lineWidth=.5;
+        ctx.stroke();
+        ctx.globalAlpha=1;
+      }
+    }
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+
+document.addEventListener('mousemove',e=>{
+  const mx=(e.clientX/window.innerWidth-.5)*20;
+  const my=(e.clientY/window.innerHeight-.5)*20;
+  document.querySelector('.orb1').style.transform=`translate(${mx*.5}px,${my*.5}px)`;
+  document.querySelector('.orb2').style.transform=`translate(${-mx*.3}px,${-my*.3}px)`;
+});
+</script>
 
 </body>
-  </html>
+</html>
