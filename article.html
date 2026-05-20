@@ -3,191 +3,558 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Articles - Akeem Fatai Oluwatobi</title>
-
+<title>Articles & News - Akeem Fatai Oluwatobi</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: white;
-}
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --neon:#00f5ff;--neon2:#7b2fff;--neon3:#ff2d78;--neon4:#00ff88;
+    --dark:#020817;--dark2:#0a1628;--dark3:#0f1f3d;--card:#0d1b2e;
+    --text:#e2e8f0;--sub:#94a3b8;
+  }
+  body{
+    font-family:'Segoe UI',Arial,sans-serif;
+    background:var(--dark);color:var(--text);
+    overflow-x:hidden;
+  }
 
-header {
-  text-align: center;
-  padding: 60px 20px;
-}
+  #particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
 
-h1 {
-  font-size: 2.5rem;
-}
+  .orb{position:fixed;border-radius:50%;filter:blur(80px);opacity:.18;animation:orbFloat 8s ease-in-out infinite alternate;z-index:0}
+  .orb1{width:500px;height:500px;background:var(--neon2);top:-100px;left:-100px;animation-delay:0s}
+  .orb2{width:400px;height:400px;background:var(--neon);bottom:-80px;right:-80px;animation-delay:-3s}
+  .orb3{width:300px;height:300px;background:var(--neon3);top:40%;left:30%;animation-delay:-6s}
+  @keyframes orbFloat{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,30px) scale(1.15)}}
 
-.subtitle {
-  color: #38bdf8;
-  margin-top: 10px;
-}
+  .grid-bg{
+    position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;
+    background-image:
+      linear-gradient(rgba(0,245,255,.04) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(0,245,255,.04) 1px,transparent 1px);
+    background-size:60px 60px;
+    animation:gridPulse 4s ease-in-out infinite alternate;
+  }
+  @keyframes gridPulse{from{opacity:.5}to{opacity:1}}
 
-.container {
-  padding: 20px;
-  max-width: 900px;
-  margin: auto;
-}
+  .scanline{
+    position:fixed;top:0;left:0;width:100%;height:3px;
+    background:linear-gradient(90deg,transparent,var(--neon),transparent);
+    z-index:1;opacity:.5;
+    animation:scan 6s linear infinite;
+  }
+  @keyframes scan{from{top:0}to{top:100%}}
 
-.article {
-  margin-bottom: 40px;
-  border-bottom: 1px solid #1e293b;
-  padding-bottom: 20px;
-}
+  .content{position:relative;z-index:2}
 
-.date {
-  color: #38bdf8;
-  font-size: 0.9rem;
-}
+  header{text-align:center;padding:60px 20px 40px;position:relative}
 
-.article h3 {
-  margin: 10px 0;
-}
+  h1{
+    font-size:clamp(28px,6vw,52px);font-weight:900;
+    background:linear-gradient(135deg,#fff 0%,var(--neon) 40%,var(--neon2) 70%,var(--neon3) 100%);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    letter-spacing:2px;text-transform:uppercase;
+    margin-bottom:12px;
+  }
 
-.article p {
-  color: #cbd5f5;
-}
+  .subtitle{
+    color:var(--sub);font-size:15px;letter-spacing:1px;margin-bottom:20px;
+  }
 
-.article a {
-  color: #22c55e;
-  text-decoration: none;
-  font-weight: bold;
-}
+  .back-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 22px;border-radius:40px;border:1px solid rgba(0,245,255,.3);
+    background:rgba(0,245,255,.05);color:var(--neon);font-weight:600;font-size:13px;
+    text-decoration:none;transition:all .3s;backdrop-filter:blur(4px);
+  }
+  .back-btn:hover{
+    border-color:var(--neon);box-shadow:0 0 20px rgba(0,245,255,.4);transform:translateY(-2px);
+  }
 
-.article a:hover {
-  text-decoration: underline;
-}
+  section{padding:40px 24px;max-width:1000px;margin:0 auto}
 
-footer {
-  text-align: center;
-  padding: 30px 10px;
-  border-top: 1px solid #1e293b;
-  margin-top: 40px;
-}
+  .section-title{
+    font-size:22px;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+    margin-bottom:32px;display:flex;align-items:center;gap:12px;
+  }
+  .section-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--neon),transparent)}
+  .section-title span{color:var(--neon)}
 
-footer a {
-  color: #38bdf8;
-  text-decoration: none;
-  margin: 0 10px;
-}
+  .filter-tabs{
+    display:flex;flex-wrap:wrap;gap:12px;margin-bottom:32px;justify-content:center;
+  }
+
+  .filter-btn{
+    padding:9px 18px;border-radius:25px;border:1px solid rgba(0,245,255,.3);
+    background:rgba(0,245,255,.05);color:var(--neon);font-weight:600;font-size:13px;
+    cursor:pointer;text-decoration:none;letter-spacing:.5px;
+    transition:all .3s;backdrop-filter:blur(4px);
+  }
+
+  .filter-btn:hover,.filter-btn.active{
+    border-color:var(--neon);box-shadow:0 0 20px rgba(0,245,255,.4);
+    background:rgba(0,245,255,.15);
+  }
+
+  .articles-grid{
+    display:grid;grid-template-columns:1fr;gap:24px;
+  }
+  @media(min-width:768px){
+    .articles-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(min-width:1100px){
+    .articles-grid{grid-template-columns:1fr 1fr 1fr}
+  }
+
+  .article-card{
+    background:linear-gradient(135deg,rgba(0,245,255,.05),rgba(123,47,255,.05));
+    border:1px solid rgba(0,245,255,.15);border-radius:16px;overflow:hidden;
+    position:relative;transition:all .4s;cursor:pointer;display:flex;flex-direction:column;
+    height:100%;
+  }
+
+  .article-card::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,var(--neon2),var(--neon),var(--neon3));
+  }
+
+  .article-card:hover{
+    transform:translateY(-8px) scale(1.02);
+    box-shadow:0 25px 60px rgba(0,245,255,.15),inset 0 0 20px rgba(0,245,255,.08);
+    border-color:rgba(0,245,255,.35);
+  }
+
+  .article-header{
+    padding:20px;background:rgba(0,0,0,.3);border-bottom:1px solid rgba(0,245,255,.1);
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+
+  .article-category{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;
+    letter-spacing:.5px;text-transform:uppercase;
+  }
+
+  .category-tech{background:rgba(0,245,255,.2);color:var(--neon);border:1px solid rgba(0,245,255,.3)}
+  .category-security{background:rgba(255,45,120,.2);color:var(--neon3);border:1px solid rgba(255,45,120,.3)}
+  .category-global{background:rgba(0,255,136,.2);color:var(--neon4);border:1px solid rgba(0,255,136,.3)}
+  .category-business{background:rgba(123,47,255,.2);color:#a78bfa;border:1px solid rgba(123,47,255,.3)}
+
+  .article-source{
+    font-size:12px;color:var(--sub);font-weight:600;
+  }
+
+  .article-body{
+    padding:20px;flex:1;display:flex;flex-direction:column;
+  }
+
+  .article-title{
+    font-size:16px;font-weight:800;line-height:1.4;margin-bottom:12px;
+    color:#fff;transition:color .3s;
+  }
+
+  .article-card:hover .article-title{color:var(--neon)}
+
+  .article-excerpt{
+    font-size:13px;color:var(--sub);line-height:1.6;margin-bottom:16px;flex:1;
+  }
+
+  .article-footer{
+    display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:12px;
+    border-top:1px solid rgba(0,245,255,.1);
+  }
+
+  .article-date{
+    font-size:12px;color:var(--sub);display:flex;align-items:center;gap:6px;
+  }
+
+  .read-more{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:8px 14px;border-radius:20px;
+    background:linear-gradient(135deg,rgba(0,245,255,.15),rgba(123,47,255,.15));
+    border:1px solid rgba(0,245,255,.25);color:var(--neon);
+    font-weight:700;font-size:12px;letter-spacing:.5px;
+    text-decoration:none;transition:all .3s;
+  }
+
+  .article-card:hover .read-more{
+    background:linear-gradient(135deg,rgba(0,245,255,.3),rgba(123,47,255,.3));
+    box-shadow:0 0 15px rgba(0,245,255,.3);
+    transform:translateX(4px);
+  }
+
+  .trending-badge{
+    display:inline-flex;align-items:center;gap:4px;
+    padding:4px 10px;border-radius:15px;
+    background:rgba(255,45,120,.15);border:1px solid rgba(255,45,120,.3);
+    color:var(--neon3);font-size:11px;font-weight:700;
+    animation:pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse{
+    0%,100%{transform:scale(1);opacity:1}
+    50%{transform:scale(1.05);opacity:.8}
+  }
+
+  .search-box{
+    max-width:400px;margin:0 auto 32px;position:relative;
+  }
+
+  .search-input{
+    width:100%;padding:12px 16px 12px 40px;
+    background:rgba(0,0,0,.3);border:1px solid rgba(0,245,255,.2);
+    border-radius:30px;color:var(--text);font-size:14px;
+    transition:all .3s;outline:none;
+  }
+
+  .search-input:focus{
+    border-color:var(--neon);box-shadow:0 0 20px rgba(0,245,255,.2);
+    background:rgba(0,245,255,.05);
+  }
+
+  .search-icon{
+    position:absolute;left:14px;top:50%;transform:translateY(-50%);
+    color:var(--sub);pointer-events:none;
+  }
+
+  footer{
+    text-align:center;padding:30px 20px;color:var(--sub);font-size:13px;
+    border-top:1px solid rgba(0,245,255,.08);position:relative;z-index:2;
+  }
+
+  footer span{
+    background:linear-gradient(90deg,var(--neon),var(--neon2));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    font-weight:700;
+  }
+
+  .marquee-section{overflow:hidden;padding:20px 0;margin:20px 0}
+  .marquee-track{
+    white-space:nowrap;overflow:hidden;
+    font-size:clamp(20px,5vw,36px);font-weight:900;
+    opacity:.08;letter-spacing:3px;
+    animation:marqLeft 18s linear infinite;color:#fff;
+  }
+  @keyframes marqLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  .social-popup{position:fixed;bottom:24px;right:16px;display:flex;flex-direction:column;gap:10px;z-index:999}
+  .social-popup a{
+    width:46px;height:46px;display:flex;align-items:center;justify-content:center;
+    border-radius:50%;background:rgba(13,27,46,.9);border:1px solid rgba(0,245,255,.2);
+    color:#fff;font-size:18px;text-decoration:none;transition:all .3s;backdrop-filter:blur(6px);
+  }
+  .social-popup a:hover{transform:scale(1.15) translateX(-4px)}
+  .social-popup a.wa:hover{background:#25D366;border-color:#25D366;box-shadow:0 0 20px rgba(37,211,102,.5)}
+  .social-popup a.ig:hover{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);border-color:#e6683c;box-shadow:0 0 20px rgba(220,39,67,.5)}
+  .social-popup a.fb:hover{background:#1877F2;border-color:#1877F2;box-shadow:0 0 20px rgba(24,119,242,.5)}
+  .social-popup a.li:hover{background:#0A66C2;border-color:#0A66C2;box-shadow:0 0 20px rgba(10,102,194,.5)}
 </style>
 </head>
-
 <body>
 
+<canvas id="particles"></canvas>
+<div class="grid-bg"></div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+<div class="scanline"></div>
+
+<div class="content">
+
 <header>
-  <h1>Articles</h1>
-  <p class="subtitle">Secure Code. Smart Design. Strong Systems.</p>
+  <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back Home</a>
+  <h1>Articles & News</h1>
+  <p class="subtitle">Latest insights in tech, cybersecurity, and global innovation</p>
 </header>
 
-<div class="container">
+<div class="marquee-section">
+  <div class="marquee-track">BREAKING NEWS &nbsp;&bull;&nbsp; CYBERSECURITY UPDATES &nbsp;&bull;&nbsp; TECH INNOVATIONS &nbsp;&bull;&nbsp; GLOBAL INSIGHTS &nbsp;&bull;&nbsp; BREAKING NEWS &nbsp;&bull;&nbsp; CYBERSECURITY UPDATES &nbsp;&bull;&nbsp;</div>
+</div>
 
-  <div class="article">
-    <div class="date">Jan 5, 2024</div>
-    <h3>Designing Secure User Interfaces</h3>
-    <p>How UI/UX decisions can prevent user errors and reduce security risks.</p>
-    <a href="thearticle1.html">Read More →</a>
+<section>
+  <h2 class="section-title"><span>//</span> Featured Articles</h2>
+  
+  <div class="search-box">
+    <i class="fas fa-search search-icon"></i>
+    <input type="text" class="search-input" id="searchInput" placeholder="Search articles...">
   </div>
 
-  <div class="article">
-    <div class="date">Jan 10, 2024</div>
-    <h3>Common Web Vulnerabilities Explained</h3>
-    <p>Understanding XSS, CSRF, and SQL Injection in modern web apps.</p>
-    <a href="thearticle2.html">Read More →</a>
+  <div class="filter-tabs">
+    <button class="filter-btn active" data-filter="all">All News</button>
+    <button class="filter-btn" data-filter="tech">Technology</button>
+    <button class="filter-btn" data-filter="security">Cybersecurity</button>
+    <button class="filter-btn" data-filter="business">Business</button>
+    <button class="filter-btn" data-filter="global">Global</button>
   </div>
 
-  <div class="article">
-    <div class="date">Jan 15, 2024</div>
-    <h3>Secure Authentication Systems</h3>
-    <p>Best practices for login systems, passwords, and multi-factor authentication.</p>
-    <a href="thearticle3.html">Read More →</a>
+  <div class="articles-grid" id="articlesContainer">
+    <!-- Articles will be populated here -->
   </div>
+</section>
 
-  <div class="article">
-    <div class="date">Jan 20, 2024</div>
-    <h3>Building Security-First Websites</h3>
-    <p>How to integrate security from the start of your web development process.</p>
-    <a href="thearticle4.html">Read More →</a>
-  </div>
-
-  <div class="article">
-    <div class="date">Jan 25, 2024</div>
-    <h3>Frontend Security Best Practices</h3>
-    <p>Protecting user data on the client side with secure coding techniques.</p>
-    <a href="thearticle5.html">Read More →</a>
-  </div>
-
-  <div class="article">
-    <div class="date">Jan 30, 2024</div>
-    <h3>Backend Security Essentials</h3>
-    <p>Server-side protection strategies every developer should know.</p>
-    <a href="thearticle6.html">Read More →</a>
-  </div>
-
-  <div class="article">
-    <div class="date">Feb 4, 2024</div>
-    <h3>HTTPS and Data Encryption</h3>
-    <p>Why SSL certificates and encryption are critical for every website.</p>
-    <a href="thearticle7.html">Read More →</a>
-  </div>
-
-  <div class="article">
-    <div class="date">Feb 9, 2024</div>
-    <h3>Preventing Website Attacks</h3>
-    <p>Simple techniques to defend against common cyber threats.</p>
-    <a href="thearticle8.html">Read More →</a>
-  </div>
-
-  <div class="article">
-    <div class="date">Feb 14, 2024</div>
-    <h3>Secure API Development</h3>
-    <p>How to design and protect APIs used in modern web applications.</p>
-    <a href="thearticle9.html">Read More →</a>
-  </div>
-
-  <div class="article">
-    <div class="date">Feb 18, 2024</div>
-    <h3>Cybersecurity for E-commerce Websites</h3>
-    <p>Protecting payments, user data, and transactions online.</p>
-    <a href="thearticle10.html">Read More →</a>
-  </div>
-
-  <div class="article">
-    <div class="date">Feb 22, 2024</div>
-    <h3>Website Security Testing Tools</h3>
-    <p>Tools developers can use to find and fix vulnerabilities.</p>
-    <a href="thearticle11.html">Read More →</a>
-  </div>
-
-  <div class="article">
-    <div class="date">Feb 28, 2024</div>
-    <h3>Future of Secure Web Development</h3>
-    <p>Trends shaping the future of cybersecurity in web design.</p>
-    <a href="thearticle12.html">Read More →</a>
-  </div>
+<footer>
+  <p>&copy; 2026 <span>Akeem Fatai Oluwatobi</span>. All rights reserved. | <a href="index.html" style="color:var(--neon);text-decoration:none;">Back to Portfolio</a></p>
+</footer>
 
 </div>
 
-<footer>
-  <p>LET'S CONNECT</p>
-  <p>Contact</p>
-  <p>We collaborate with ambitious brands and people worldwide.</p>
-  <p>akeem.fatai15@gmail.com</p>
-  <p>+(234)9158689138</p>
+<div class="social-popup">
+  <a href="https://wa.me/2349158689138" target="_blank" class="wa"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://www.instagram.com/tobi__fatai?igsh=ZTFpZWdlY2VhOW9y" target="_blank" class="ig"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.facebook.com/share/1BMtpWTc89/" target="_blank" class="fb"><i class="fab fa-facebook"></i></a>
+  <a href="https://www.linkedin.com/in/oluwatobi-akeem-4b16462b1?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="li"><i class="fab fa-linkedin"></i></a>
+</div>
 
-  <div>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="articles.html">Articles</a>
-  </div>
+<script>
+// Particles background
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let W, H;
 
-  <p>Design by RDG</p>
-</footer>
+function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight}
+resize();
+window.addEventListener('resize',resize);
+
+const colors=['#00f5ff','#7b2fff','#ff2d78','#00ff88'];
+for(let i=0;i<90;i++){
+  particles.push({
+    x:Math.random()*window.innerWidth,
+    y:Math.random()*window.innerHeight,
+    r:Math.random()*1.5+.3,
+    vx:(Math.random()-.5)*.4,
+    vy:(Math.random()-.5)*.4,
+    color:colors[Math.floor(Math.random()*colors.length)],
+    alpha:Math.random()*.6+.2,
+    pulse:Math.random()*Math.PI*2
+  });
+}
+
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  particles.forEach((p,i)=>{
+    p.pulse+=.02;
+    const a=p.alpha*(0.5+0.5*Math.sin(p.pulse));
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=p.color;
+    ctx.globalAlpha=a;
+    ctx.fill();
+    ctx.globalAlpha=1;
+    p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0)p.x=W;if(p.x>W)p.x=0;
+    if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+    for(let j=i+1;j<particles.length;j++){
+      const q=particles[j];
+      const dx=p.x-q.x,dy=p.y-q.y;
+      const dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<100){
+        ctx.beginPath();
+        ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);
+        ctx.strokeStyle=p.color;
+        ctx.globalAlpha=(1-dist/100)*0.1;
+        ctx.lineWidth=.5;
+        ctx.stroke();
+        ctx.globalAlpha=1;
+      }
+    }
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+
+// Articles Data
+const articles = [
+  {
+    id: 1,
+    title: "New AI Security Threats Emerging in 2026",
+    excerpt: "Researchers warn about sophisticated AI-powered cyber attacks targeting enterprise networks worldwide.",
+    category: "security",
+    source: "BBC News",
+    date: "May 18, 2026",
+    link: "https://www.bbc.com/news",
+    trending: true
+  },
+  {
+    id: 2,
+    title: "Global Tech Giants Invest $50B in Quantum Computing",
+    excerpt: "Major technology companies announce unprecedented funding for quantum research and development initiatives.",
+    category: "tech",
+    source: "Reuters",
+    date: "May 17, 2026",
+    link: "https://www.reuters.com",
+    trending: true
+  },
+  {
+    id: 3,
+    title: "Cybersecurity Awareness: New Company Standards",
+    excerpt: "Fortune 500 companies adopt stricter employee security protocols following recent data breaches.",
+    category: "security",
+    source: "The Guardian",
+    date: "May 16, 2026",
+    link: "https://www.theguardian.com",
+    trending: false
+  },
+  {
+    id: 4,
+    title: "Blockchain Technology Reshapes Financial Markets",
+    excerpt: "Central banks worldwide explore blockchain solutions for faster international transactions.",
+    category: "business",
+    source: "Financial Times",
+    date: "May 15, 2026",
+    link: "https://www.ft.com",
+    trending: false
+  },
+  {
+    id: 5,
+    title: "Green Tech Solutions Reduce Carbon Footprint",
+    excerpt: "Innovative renewable energy technologies demonstrate significant environmental impact globally.",
+    category: "global",
+    source: "Al Jazeera",
+    date: "May 14, 2026",
+    link: "https://www.aljazeera.com",
+    trending: true
+  },
+  {
+    id: 6,
+    title: "Zero-Day Vulnerability Affects Millions of Devices",
+    excerpt: "Critical security patch released to address widespread vulnerability affecting multiple OS platforms.",
+    category: "security",
+    source: "CNN International",
+    date: "May 13, 2026",
+    link: "https://www.cnn.com",
+    trending: true
+  },
+  {
+    id: 7,
+    title: "5G Networks Expand Across Africa and Asia",
+    excerpt: "Telecommunications companies invest heavily in 5G infrastructure across developing nations.",
+    category: "tech",
+    source: "DW News",
+    date: "May 12, 2026",
+    link: "https://www.dw.com",
+    trending: false
+  },
+  {
+    id: 8,
+    title: "Ransomware Attacks Hit Record High in Q1 2026",
+    excerpt: "Organizations lose billions to sophisticated ransomware campaigns targeting healthcare and finance sectors.",
+    category: "security",
+    source: "BBC News",
+    date: "May 11, 2026",
+    link: "https://www.bbc.com/news",
+    trending: true
+  },
+  {
+    id: 9,
+    title: "Cloud Computing Market Surges to New Heights",
+    excerpt: "Market analysis shows unprecedented growth in cloud services as enterprises digitally transform operations.",
+    category: "business",
+    source: "TechCrunch",
+    date: "May 10, 2026",
+    link: "https://techcrunch.com",
+    trending: false
+  },
+  {
+    id: 10,
+    title: "International Cybersecurity Treaty Signed",
+    excerpt: "Nations agree on unified standards for cyber defense and information sharing protocols.",
+    category: "global",
+    source: "Reuters",
+    date: "May 9, 2026",
+    link: "https://www.reuters.com",
+    trending: false
+  },
+  {
+    id: 11,
+    title: "Machine Learning Advances in Healthcare",
+    excerpt: "AI algorithms achieve breakthrough accuracy in disease detection and personalized treatment planning.",
+    category: "tech",
+    source: "The Economist",
+    date: "May 8, 2026",
+    link: "https://www.economist.com",
+    trending: false
+  },
+  {
+    id: 12,
+    title: "Data Privacy Regulations Tighten Worldwide",
+    excerpt: "New international laws enforce stricter penalties for data misuse and personal information breaches.",
+    category: "security",
+    source: "BBC News",
+    date: "May 7, 2026",
+    link: "https://www.bbc.com/news",
+    trending: false
+  }
+];
+
+// Render articles
+function renderArticles(filter = 'all', searchTerm = '') {
+  const container = document.getElementById('articlesContainer');
+  let filtered = articles;
+
+  if (filter !== 'all') {
+    filtered = articles.filter(a => a.category === filter);
+  }
+
+  if (searchTerm) {
+    filtered = filtered.filter(a => 
+      a.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      a.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }
+
+  container.innerHTML = filtered.map(article => `
+    <div class="article-card" data-category="${article.category}">
+      <div class="article-header">
+        <span class="article-category category-${article.category}">
+          <i class="fas fa-tag"></i> ${article.category}
+        </span>
+        ${article.trending ? '<span class="trending-badge"><i class="fas fa-fire"></i> Trending</span>' : ''}
+      </div>
+      <div class="article-body">
+        <h3 class="article-title">${article.title}</h3>
+        <p class="article-excerpt">${article.excerpt}</p>
+        <div class="article-footer">
+          <span class="article-date"><i class="far fa-calendar"></i> ${article.date}</span>
+          <a href="${article.link}" target="_blank" class="read-more">
+            Read More <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+      <div style="padding:10px 20px;background:rgba(0,0,0,.2);border-top:1px solid rgba(0,245,255,.1);font-size:11px;color:var(--sub);">
+        Source: ${article.source}
+      </div>
+    </div>
+  `).join('');
+}
+
+// Filter functionality
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+    const filter = e.target.dataset.filter;
+    const searchTerm = document.getElementById('searchInput').value;
+    renderArticles(filter, searchTerm);
+  });
+});
+
+// Search functionality
+document.getElementById('searchInput').addEventListener('input', (e) => {
+  const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+  renderArticles(activeFilter, e.target.value);
+});
+
+// Initial render
+renderArticles();
+
+// Orb parallax
+document.addEventListener('mousemove',e=>{
+  const mx=(e.clientX/window.innerWidth-.5)*20;
+  const my=(e.clientY/window.innerHeight-.5)*20;
+  document.querySelector('.orb1').style.transform=`translate(${mx*.5}px,${my*.5}px)`;
+  document.querySelector('.orb2').style.transform=`translate(${-mx*.3}px,${-my*.3}px)`;
+});
+</script>
 
 </body>
-  </html>
+</html>
